@@ -19,8 +19,5 @@
 </script>
 
 <style>
-template{
-	
-	height: 100%;
-}
+
 </style>
