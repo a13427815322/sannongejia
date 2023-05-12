@@ -1,0 +1,1 @@
+<view class="navBarBox"><view class="statusBar" style="{{'padding-top:' + a}}"></view><view class="navBar"><uni-nav-bar wx:if="{{c}}" bindclickRight="{{b}}" u-i="266a4fbf-0" bind:__l="__l" u-p="{{c}}"/></view></view>

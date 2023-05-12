@@ -1,0 +1,78 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		}
+	    ,{
+            "path" : "pages/community/community",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/shop/shop",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/me/me",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/addcommunity/addcommunity",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationStyle": "custom"
+	},
+	"tabBar": {
+		"list": [
+			{
+				"iconPath": "static/logo.png",
+				"pagePath": "pages/index/index",
+				"selectedIconPath": "static/logo.png",
+				"text": "首页"
+			},
+			{
+				"iconPath": "static/logo.png",
+				"pagePath": "pages/community/community",
+				"selectedIconPath": "static/logo.png",
+				"text": "互助社区"
+			},
+			{
+				"iconPath": "static/logo.png",
+				"pagePath": "pages/shop/shop",
+				"selectedIconPath": "static/logo.png",
+				"text": "农资商城"
+			},
+			{
+				"iconPath": "static/logo.png",
+				"pagePath": "pages/me/me",
+				"selectedIconPath": "static/logo.png",
+				"text": "个人中心"
+			}
+		]
+	},
+	"uniIdRouter": {}
+}
