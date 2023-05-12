@@ -19,5 +19,7 @@
 </script>
 
 <style>
-
+template{
+	width: 100%;
+}
 </style>
