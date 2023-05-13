@@ -1,4 +1,9 @@
 <template>
+	<view>
+		<swiper class="newswiper">
+			<swiper-item v-for="(item,index) in banner" ><image :src="item.url" mode="scaleToFill" ></image></swiper-item>
+		</swiper>
+	</view>
 	<scroll-view scroll-x class="tabs-title" style="white-space: nowrap">
 		<view :class="active===index?'active':''" v-for="(item,index) in tabList" :key="index" @click="ontabtap(index)">
 				{{item.name}}
@@ -28,7 +33,13 @@
 					name: '农业科技'
 				}],
 				active: 0,
-				news: []
+				news: [],
+				banner:[
+					{url:"https://mp-efbf9779-c0d9-4262-ab16-a6d0746727bb.cdn.bspapp.com/cloudstorage/3eedbd9a-fb96-4c48-9886-38c79bc2288a.jpg"},
+					{url:"https://mp-efbf9779-c0d9-4262-ab16-a6d0746727bb.cdn.bspapp.com/cloudstorage/4da7c448-5a4d-4ab2-97ea-7a4e07d0909f.jpg"},
+					{url:"https://mp-efbf9779-c0d9-4262-ab16-a6d0746727bb.cdn.bspapp.com/cloudstorage/11b941cb-cb2e-45f5-ae17-de9c7268fbb1.jpg"}
+					
+				]
 			}
 		},
 		onLoad() {
@@ -64,41 +75,5 @@
 </script>
 
 <style>
-	.tabs {
-		height: 100%;
-	}
-
-	.tabs-title {
-		white-space: nowrap;
-		width: 730rpx;
-	}
-
-	.tabs-title view {
-		padding-left: 5px;
-		padding-right: 5px;
-		display: inline-block;
-		height: 60px;
-		line-height: 60px;
-		color: #666666;
-		text-align: center;
-	}
-	.newleft{
-		display: inline-block;
-		width:50%;
-		float: left;
-	}
-
-	.tabs-title .active {
-		color: #000000;
-	}
-	.newimg{
-		width:120rpx;
-		height:120rpx;
-		display: inline-block;
-		float: right;
-	}
-	.newimg image{
-		width: 100%;
-		height: 100%;
-	}
+	@import "index.css";
 </style>
