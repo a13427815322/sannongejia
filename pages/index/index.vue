@@ -1,4 +1,5 @@
 <template>
+	1
 	<scroll-view scroll-x class="tabs-title" style="white-space: nowrap">
 		<view :class="active===index?'active':''" v-for="(item,index) in tabList" :key="index" @click="ontabtap(index)">
 				{{item.name}}
