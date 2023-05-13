@@ -3,6 +3,17 @@
 		<view :class="active===index?'active':''" v-for="(item,index) in tabList" :key="index" @click="ontabtap(index)">
 				{{item.name}}
 		</view>		</scroll-view>
+		<view v-for="(item,index) in news" >
+			<view>
+				<view class="newleft">
+					<view>{{item.title}}</view>
+					<view><view>{{item.soure}}</view><view>{{item.datetime}}</view></view>
+				</view>
+				<view class="newimg"><image :src="item.img_url" mode="aspectFill"></image></view>
+				
+			</view>
+			<view style="clear: both;"></view>
+		</view>
 </template>
 
 <script>
@@ -39,7 +50,11 @@
 					},
 					success: res => {
 						console.log(res)
-
+						for(let index in res.data){
+							res.data[index].datetime=new Date(res.data[index].datetime).toLocaleDateString();
+							
+						}
+						// res.data.datetime.substring(0,5)
 						this.news = res.data
 					}
 				})
@@ -56,8 +71,6 @@
 	.tabs-title {
 		white-space: nowrap;
 		width: 730rpx;
-		height: 100rpx;
-
 	}
 
 	.tabs-title view {
@@ -69,9 +82,23 @@
 		color: #666666;
 		text-align: center;
 	}
+	.newleft{
+		display: inline-block;
+		width:50%;
+		float: left;
+	}
 
 	.tabs-title .active {
-
 		color: #000000;
+	}
+	.newimg{
+		width:120rpx;
+		height:120rpx;
+		display: inline-block;
+		float: right;
+	}
+	.newimg image{
+		width: 100%;
+		height: 100%;
 	}
 </style>
