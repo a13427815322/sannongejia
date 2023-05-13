@@ -1,12 +1,18 @@
 <template>
-	<view>
-		<swiper class="newswiper">
+	<view class="search">
+<image src="../../static/saerch.svg" ></image>
+				<input placeholder="请输入要查找的内容"/>
+	</view>
+	<view >
+		<swiper class="newswiper" indicator-dots="true" indicator-color="#FFFFFF" indicator-active-color="#24AC6B" autoplay="true" interval="3000" circular="true" >
 			<swiper-item v-for="(item,index) in banner" ><image :src="item.url" mode="scaleToFill" ></image></swiper-item>
 		</swiper>
 	</view>
-	<scroll-view scroll-x class="tabs-title" style="white-space: nowrap">
-		<view :class="active===index?'active':''" v-for="(item,index) in tabList" :key="index" @click="ontabtap(index)">
-				{{item.name}}
+	<view class="newsbox">
+	相关资讯
+	<scroll-view scroll-x class="tabs-title" style="white-space: nowrap"   >
+		<view  v-for="(item,index) in tabList" :key="index" @click="ontabtap(index)">
+			<span :class="active===index?'active':''">	{{item.name}}</span>
 		</view>		</scroll-view>
 		<view v-for="(item,index) in news" >
 			<view>
@@ -19,9 +25,10 @@
 			</view>
 			<view style="clear: both;"></view>
 		</view>
+		</view>
 </template>
 
-<script>
+<script >
 	export default {
 		data() {
 			return {
@@ -74,6 +81,7 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	@import "index.css";
+	
 </style>

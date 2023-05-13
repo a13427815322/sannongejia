@@ -7,6 +7,7 @@ if (!Math) {
   "./pages/shop/shop.js";
   "./pages/me/me.js";
   "./pages/addcommunity/addcommunity.js";
+  "./pages/shoppingcart/shoppingcart.js";
 }
 const _sfc_main = {
   onLaunch: function() {
