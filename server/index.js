@@ -19,7 +19,7 @@
 	env ={
 	host:"localhost",
 	user:"root",
-	password:"root",
+	password:"rroott",
 	database:"sannongejia"
 	}
 	function handleError(err){
