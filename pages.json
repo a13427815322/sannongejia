@@ -93,10 +93,10 @@
 	"rightWindow": {
 		"path": "./responsive/right-window", //指定rightWidow页面文件
 		"style": {
-			"width": "calc(100% - 375px)" //页面宽度
+			"width": "calc(100% - 720px)" //页面宽度
 		},
 		"matchMedia": {
-			"minWidth": 375 //生效条件，当窗口宽度大于768px时显示
+			"minWidth": 720 //生效条件，当窗口宽度大于768px时显示
 		}
 	}
 }
