@@ -1,0 +1,76 @@
+.titlebox{
+	width: 95%;
+	margin: auto;
+	font-family: 'Microsoft YaHei';
+	font-style: normal;
+	font-weight: 600;
+	color: #000000;
+	line-height: 24px;
+	font-size: 20px;
+}
+.time{
+	width: 100%;
+	margin-top: 16px;
+}
+.soure{
+	font-family: 'Microsoft YaHei';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 18px;
+	color: rgba(0, 0, 0, 0.6);
+	float: left;
+}
+.timebox{
+	text-indent: 5px;
+	font-family: 'Microsoft YaHei';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 18px;
+	color: rgba(0, 0, 0, 0.6);
+}
+.newsimage{
+	width: 95%;
+	margin: auto;
+	margin-top: 16px;
+}
+.newsimagebox{
+	width: 100%;
+}
+.content{
+	width: 100%;
+	margin-top: 16px;
+}
+.contentbox{
+	width: 95%;
+	margin: auto;
+	font-family: 'Microsoft YaHei';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+	text-indent: 20px;
+	color: rgba(0, 0, 0, 0.8);
+}
+.top-back{
+	
+	position: fixed;
+	right: 2.5%;
+	bottom: 50px;
+}
+.top-back button{
+	color: #ffffff;
+	font-family: 'Microsoft YaHei';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 30px;
+	width: 70px;
+	height: 70px;
+	border-radius: 35px;
+	background-color: #24ac6b;
+}
+.top-back .bttext{
+	margin-top: 5px;
+}

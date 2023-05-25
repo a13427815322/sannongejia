@@ -245,6 +245,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/newsdetail/newsdetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationStyle": "custom"

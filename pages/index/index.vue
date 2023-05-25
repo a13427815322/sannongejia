@@ -60,7 +60,7 @@
 		methods: {
 			toNewsdetail(id){
 				uni.navigateTo({
-					url: '../newsdetail/newsdetail?id =' + id
+					url: '../newsdetail/newsdetail?id='+id
 				})
 			},
 			ontabtap(index) {

@@ -429,6 +429,18 @@ app.post("/userinfo", (req, res) => {
 
 	})
 });
+app.post('/newsdetail',(req,res)=>{
+    var id=req.body.id;
+    console.log(id)
+    var sql="select * from news where id="+id;
+    connection.query(sql,(err,result)=>{
+        if(err){
+            console.log("select error",err.message);
+        }
+        console.log(result)
+        res.json(result)
+    })
+});
 app.listen(3001, () => {
 	console.log("server running at http://127.0.0.1:3001")
 })
