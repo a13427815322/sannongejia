@@ -210,7 +210,6 @@
 					}
 				} else {
 					this.shopcartbox = []
-
 					for (var i in this.shopcart) {
 						for (var j in this.idbox) {
 							if (this.idbox[j] == this.shopcart[i].shopid) {
@@ -271,7 +270,7 @@
 						url: 'http://127.0.0.1:3001/deleteshopcard',
 						method: 'POST',
 						data: {
-							_id: this.userinfo._id,
+							_id:this.userinfo[0]._id,
 							shopcart: this.shopcartbox1
 						},
 						success: res => {
