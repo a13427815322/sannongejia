@@ -3,7 +3,8 @@
 const whiteList = [
   '/pages/me/me',
   '/',
-  '/uni_modules/uni-id-pages/pages/login/login-withpwd'
+  '/uni_modules/uni-id-pages/pages/login/login-withpwd',
+  '/uni_modules/uni-id-pages/pages/register/register'
 ]
 function hasPermission (url) {
 var value = uni.getStorageSync('uni-id-pages-userInfo');		

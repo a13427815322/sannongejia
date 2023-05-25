@@ -15,7 +15,7 @@
 			<span :class="active===index?'active':''">	{{item.name}}</span>
 		</view>		</scroll-view>
 		<view v-for="(item,index) in news" >
-			<view class="itembox">
+			<view class="itembox" @click="toNewsdetail(item.id)">
 				<view class="newleft">
 					<view class="newtitle">{{item.title}}</view>
 					<view><view class="newsoure">{{item.soure}}</view><view class="newdatetime">{{item.datetime}}</view></view>
@@ -58,8 +58,11 @@
 			    }
 		},
 		methods: {
-			
-		
+			toNewsdetail(id){
+				uni.navigateTo({
+					url: '../newsdetail/newsdetail?id =' + id
+				})
+			},
 			ontabtap(index) {
 				this.active = index
 
