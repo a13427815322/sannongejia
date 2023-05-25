@@ -1,0 +1,47 @@
+.headSculpture{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	display: inline-block;
+}
+.ggtx{
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	margin-top:40px ;
+}
+.ggtx view{
+	margin-bottom: 16px;
+	margin-top:8px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #0065FF;
+}
+.ggtx view,.ggtx image{
+	cursor: pointer;
+}
+.xingxi view{
+	display: inline-block;
+
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+}
+.xingxi view:nth-child(2){
+	color: #666666;
+	margin-left: 5px;
+}
+.xingxi{
+	height: 52px;
+	line-height:52px;
+	border-top:  1px solid rgba(153, 153, 153, 0.1); 
+	margin-left: 16px;
+}
+.xiugaimz{
+	width: 24px;
+	height: 24px;
+	opacity:0.6;
+	float: right;
+	margin-top:3%;
+	margin-right:17px;
+}

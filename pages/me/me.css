@@ -1,0 +1,60 @@
+.userbackground{
+	background-image: url('https://mp-efbf9779-c0d9-4262-ab16-a6d0746727bb.cdn.bspapp.com/cloudstorage/dacd0d1a-3671-4649-9b4a-6a0653ea5ad8.png') ;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 231px;
+	background-size: 100%;
+}
+.headSculpture{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	display: inline-block;
+	float: left;
+}
+.userinformation{
+	display: inline-block;
+	float: left;
+	margin-left: 35px;
+}
+.setting image{
+	width: 22px;
+	height: 22px;
+	
+}
+.setting{
+	float: right;
+	width: 10%;
+	min-width: 35px;
+	text-align: center;
+	margin-top: 5px;
+}
+.userinfobox{
+	padding: 76px 5%;
+	
+}
+.username{
+	font-weight: 600;
+	font-size: 17px;
+	line-height: 24px;
+	color: #333333;
+}
+.nickname{
+	margin-top: 15px;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 21px;
+	color: #333333;
+}
+.wddd{
+	width: 90%;
+	background-color: #ffffff;
+	margin:-60px auto;
+}
+body{
+	background-color:#f5f5f5;
+}
+.qb{
+	width:15px;
+	height:15px;
+}

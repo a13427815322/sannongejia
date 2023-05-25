@@ -1,6 +1,6 @@
 <template>
 	<view class="search">
-<image src="../../static/saerch.svg" ></image>
+<image src="../../static/shape.png" ></image>
 				<input placeholder="请输入要查找的内容"/>
 </view>
 	<view >
@@ -50,9 +50,16 @@
 			}
 		},
 		onLoad() {
-			this.requestindex()
+			this.requestindex();
+			const value = uni.getStorageSync('uni-id-pages-userInfo');
+			    if (value) {
+			        console.log(value);
+					
+			    }
 		},
 		methods: {
+			
+		
 			ontabtap(index) {
 				this.active = index
 
@@ -70,9 +77,9 @@
 						console.log(res)
 						for(let index in res.data){
 							res.data[index].datetime=new Date(res.data[index].datetime).toLocaleDateString();
-							console.log(res.data[index].title.length)
-							if(res.data[index].title.length>=30){
-								res.data[index].title=res.data[index].title.substring(0,30)+"..."
+						
+							if(res.data[index].title.length>=25){
+								res.data[index].title=res.data[index].title.substring(0,25)+"..."
 							}
 						}
 						// res.data.datetime.substring(0,5)
@@ -80,7 +87,8 @@
 					}
 				})
 			}
-		}
+		},
+		
 	}
 </script>
 

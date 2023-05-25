@@ -1,0 +1,144 @@
+.userimg {
+	width: 30px;
+	height: 30px;
+}
+page {
+	background-color: #F5F5F5;
+	width: 100%;
+}
+.bodybox {
+	background-color: #ffffff;
+	width: 100%;
+	margin: 0 auto;
+}
+.sourcevideo {
+	width: 100%;
+}
+.sourcevideo video {
+	width: 100%;
+}
+.source {
+	width: 30%;
+	float: left;
+}
+.source image {
+	height: 80px;
+	width: 90%;
+	margin-top: 12px;
+	float: left;
+}
+.combox {
+	width: 100%;
+	padding-bottom: 15px;
+}
+.plbox {
+	width: 90%;
+	margin: 15px auto;
+}
+.comer image {
+	width: 36px;
+	height: 36px;
+	margin-top: 16px;
+	margin-right: 8px;
+	float: left;
+	border-radius: 4px;
+}
+.comer .username {
+	font-family: 'PingFang SC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 10px;
+	line-height: 28px;
+	color: #333333;
+}
+.plcom {
+	font-family: 'PingFang SC';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 28px;
+	color: #000000;
+}
+.user image {
+	width: 48px;
+	height: 48px;
+	margin-top: 16px;
+	margin-right: 8px;
+	float: left;
+	border-radius: 4px;
+}
+.content {
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+.com1box {
+	clear: both;
+	position: fixed;
+	bottom: 0;
+	max-width: 720px;
+	width: 100%;
+	height: 50px;
+	background-color: #ffffff;
+}
+.com1box input {
+	border-radius: 5px;
+	height: 40px;
+	margin-top: 3px;
+	border: 1px #000000 solid;
+	width: 70%;
+	float: left;
+}
+.com1box .planniu {
+	width: 15%;
+	float: right;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	margin-right: 5%;
+	margin-top: 5px;
+	background-color:#24AC6B;
+	border-radius: 4px;
+}
+.text {
+	display: inline-block;
+	float: right;
+	margin-right: 10px;
+	margin-bottom: 18px;
+}
+.svgtext {
+	margin-left: 7px;
+	float: right;
+}
+.text image {
+	width: 20px;
+	height: 22px;
+}
+.username {
+	font-family: 'PingFang SC';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 28px;
+	color: #333333;
+	padding-top: 16px;
+}
+.clickbox {
+	clear: both;
+	margin-right: 20px;
+	margin-top: 18px;
+}
+.textarea {
+	margin-left: 5%;
+}
+.time {
+	font-family: 'PingFang SC';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 22px;
+	color: #666666;
+}
+.vf {
+	margin: 3%;
+	margin-top: 20px;
+}

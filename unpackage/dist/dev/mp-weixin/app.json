@@ -4,8 +4,34 @@
     "pages/community/community",
     "pages/shop/shop",
     "pages/me/me",
-    "pages/addcommunity/addcommunity",
-    "pages/shoppingcart/shoppingcart"
+    "pages/shoppingcart/shoppingcart",
+    "uni_modules/uni-id-pages/pages/userinfo/deactivate/deactivate",
+    "uni_modules/uni-id-pages/pages/userinfo/userinfo",
+    "uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile",
+    "uni_modules/uni-id-pages/pages/userinfo/cropImage/cropImage",
+    "uni_modules/uni-id-pages/pages/login/login-withoutpwd",
+    "uni_modules/uni-id-pages/pages/login/login-withpwd",
+    "uni_modules/uni-id-pages/pages/login/login-smscode",
+    "uni_modules/uni-id-pages/pages/register/register",
+    "uni_modules/uni-id-pages/pages/register/register-by-email",
+    "uni_modules/uni-id-pages/pages/retrieve/retrieve",
+    "uni_modules/uni-id-pages/pages/retrieve/retrieve-by-email",
+    "uni_modules/uni-id-pages/pages/common/webview/webview",
+    "uni_modules/uni-id-pages/pages/userinfo/change_pwd/change_pwd",
+    "uni_modules/uni-id-pages/pages/register/register-admin",
+    "uni_modules/uni-id-pages/pages/userinfo/set-pwd/set-pwd",
+    "uni_modules/uni-id-pages/pages/userinfo/realname-verify/realname-verify",
+    "pages/setting/setting",
+    "pages/grxx/grxx",
+    "pages/nickname/nickname",
+    "pages/birthday/birthday",
+    "pages/sex/sex",
+    "pages/username/username",
+    "pages/shopdetail/shopdetail",
+    "pages/dingdandetail/dingdandetail",
+    "pages/detail/detail",
+    "pages/addvideo/addvideo",
+    "pages/addcom/addcom"
   ],
   "window": {
     "navigationStyle": "custom"
@@ -13,33 +39,33 @@
   "tabBar": {
     "list": [
       {
-        "iconPath": "static/Vectored.svg",
+        "iconPath": "static/Vectored.png",
         "pagePath": "pages/index/index",
-        "selectedIconPath": "static/Vector.svg",
+        "selectedIconPath": "static/Vector.png",
         "text": "首页"
       },
       {
-        "iconPath": "static/Community.svg",
+        "iconPath": "static/Community.png",
         "pagePath": "pages/community/community",
-        "selectedIconPath": "static/Communityfill.svg",
+        "selectedIconPath": "static/Communityfill.png",
         "text": "互助社区"
       },
       {
-        "iconPath": "static/Shop.svg",
+        "iconPath": "static/shop.png",
         "pagePath": "pages/shop/shop",
-        "selectedIconPath": "static/Shopfill.svg",
+        "selectedIconPath": "static/Shoped.png",
         "text": "农资商城"
       },
       {
-        "iconPath": "static/Shopping Trolley.svg",
+        "iconPath": "static/ShoppingTrolley.png",
         "pagePath": "pages/shoppingcart/shoppingcart",
-        "selectedIconPath": "static/Shopping Trolleyfill.svg",
+        "selectedIconPath": "static/ShoppingTrolleyfill.png",
         "text": "购物车"
       },
       {
-        "iconPath": "static/me.svg",
+        "iconPath": "static/Personal.png",
         "pagePath": "pages/me/me",
-        "selectedIconPath": "static/Personalfill.svg",
+        "selectedIconPath": "static/Personalfill.png",
         "text": "个人中心"
       }
     ]

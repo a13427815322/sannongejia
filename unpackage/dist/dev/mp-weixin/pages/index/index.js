@@ -21,6 +21,10 @@ const _sfc_main = {
   },
   onLoad() {
     this.requestindex();
+    const value = common_vendor.index.getStorageSync("uni-id-pages-userInfo");
+    if (value) {
+      console.log(value);
+    }
   },
   methods: {
     ontabtap(index) {
@@ -38,6 +42,9 @@ const _sfc_main = {
           console.log(res);
           for (let index in res.data) {
             res.data[index].datetime = new Date(res.data[index].datetime).toLocaleDateString();
+            if (res.data[index].title.length >= 25) {
+              res.data[index].title = res.data[index].title.substring(0, 25) + "...";
+            }
           }
           this.news = res.data;
         }

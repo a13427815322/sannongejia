@@ -1,0 +1,163 @@
+
+.nav{
+	height: 56px;
+	width: 90%;
+	margin: 0 auto;
+	line-height: 56px; 
+	
+}
+.navleft{
+	float: left;
+	font-family: 'PingFang SC';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 17px;
+	color: #333333;
+}
+.navleft span{
+	font-weight: 400;
+	font-size: 14px;
+	color: #000000;
+
+}
+.navright{
+	float: right;
+font-family: 'PingFang SC';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+
+color: #24AC6B;
+}
+.orderbox{
+	width: 100%;
+	margin-top: 10px;
+}
+page{
+	background-color: #F5F5F5;
+}
+.ordercard image{
+	width: 96px;
+	height: 96px;
+	margin-top: 16px;
+	margin-left: 8px;
+	float: left;
+}
+
+.ordercard{
+	margin: auto;
+	width: 90%;
+	background-color: #ffffff;
+}
+checkbox-group{
+	float: left;
+}
+.checkbox{
+	margin-top: 52px;
+	margin-left: 16px;
+}
+.ordername{
+	float: right;
+	margin:15px;
+	
+	}
+.showname{
+	font-family:'PingFang SC';
+	font-style:normal;
+	font-weight:600;
+	font-size:14px;
+	line-height: 28px;
+	color: #333333;
+	font-weight: bold;
+	}
+
+.jiage{
+	margin-top: 40px;
+	font-family:'PingFang SC';
+	font-style:normal;
+	font-weight:600;
+	font-size:14px;
+	line-height: 28px;
+	color: #333333;
+	font-weight: bold;
+	display:inline-block;
+	float: left;
+}
+.count{
+	margin-top: 40px;
+display:inline-block;
+float:right;
+text-align: end;
+
+}
+
+
+.bottom{
+	position: fixed;
+	bottom:0;
+	height: 50px;
+	line-height: 50px;
+	width: 100%;
+	max-width: 720px;
+	background-color: #FFFFFF;
+}
+.tjdd{
+	margin-top: 5px;
+	height: 40px;
+	line-height: 40px;
+	margin-right:16px;
+	width: 100px;
+	background: #24AC6B;
+	border-radius: 32px;
+	font-family: 'PingFang SC';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	text-align: center;
+	color: #FFFFFF;
+	display: inline-block;
+}
+.quanxuan{
+	margin-left:16px;
+	
+}
+.quanxuantext{
+	letter-spacing:2px;
+	font-weight: 500;
+	line-height: 36px;
+	text-align: center;
+	color: #24AC6B;
+
+}
+.tjddbox{
+		float: right;
+}
+.tjddbox view{
+	display: inline-block;
+	float: left;
+}
+.zhongji{
+	margin-right: 10px;
+}
+.zhongjiqian{
+	color: #24AC6B;
+}
+.sc{
+	margin-top: 5px;
+	height: 40px;
+	line-height: 40px;
+	margin-right:16px;
+	width: 100px;
+	background: #FD3333;
+	border-radius: 32px;
+	font-family: 'PingFang SC';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	text-align: center;
+	color: #FFFFFF;
+}
+.orderdata{
+	margin: 16px auto;
+	border-radius: 4px;
+}

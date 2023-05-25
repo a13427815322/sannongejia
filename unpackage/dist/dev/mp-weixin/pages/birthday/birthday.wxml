@@ -1,0 +1,1 @@
+<view class="navBarBox"><view class="statusBar" style="{{'padding-top:' + a}}"></view><uni-nav-bar wx:if="{{c}}" bindclickLeft="{{b}}" u-i="0ba8fb4b-0" bind:__l="__l" u-p="{{c}}"/></view><picker mode="date" value="{{e}}" bindchange="{{f}}" class="xingxiinput" start="{{g}}" end="{{h}}"><view>{{d}}</view></picker><view></view><view bindtap="{{i}}" class="qrxg">确认修改 </view>

@@ -23,7 +23,7 @@
 
 .newleft {
 	display: inline-block;
-	width: 50%;
+	width: 60%;
 	float: left;
 	
 }
@@ -62,8 +62,9 @@
 	border-radius: 4px;
 }
 body{
-	max-width: 720px;
+	max-width: 703px;
 	width: 100%;
+
 	
 }
 .search{

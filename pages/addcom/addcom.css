@@ -1,0 +1,56 @@
+.textarea{
+	width:100%;
+	margin-left: 18%;
+}
+page{
+	background-color: #ffffff;
+}
+uni-view .uni-forms-item{
+		margin-left: -64px;
+}
+uni-view .uni-file-picker{
+	margin-left: 75px;
+	width: 80%;
+}
+#uchange{
+	display: none;
+	float: left;
+	margin-left: 10px;
+	margin-top: 9px;
+}
+.address{
+	margin-top: 20px;
+	margin-left: 75px;
+}
+.address1 image{
+	width: 13.51px;
+	height: 18px;
+	margin-top: 10px;
+}
+#mr{
+	float: left;
+	margin-left: 10px;
+	margin-top: 9px;
+	
+}
+#dz{
+	width: 80%; 
+	float: left; 
+	margin-left: 10px;
+	display: none;
+}
+.address1 span{
+	font-family: 'PingFang SC';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 18px;
+	color: #000000;
+	margin-left: 13.49px;
+	/* background-color: #000000; */
+}
+.img{
+	float: right;
+	margin-right: 20px;
+	margin-top: 10px;
+}

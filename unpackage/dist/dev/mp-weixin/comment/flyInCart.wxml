@@ -1,0 +1,1 @@
+<view class="relative data-v-65b6610f"><view wx:for="{{a}}" wx:for-item="d" wx:key="b" class="ball data-v-65b6610f" style="{{d.c}}"><view class="inner arbg data-v-65b6610f" style="{{d.a}}"></view></view></view>

@@ -1,5 +1,5 @@
 import App from './App'
-
+import './router/index';//引入拦截
 // #ifndef VUE3
 import Vue from 'vue'
 Vue.config.productionTip = false

@@ -1,0 +1,13 @@
+
+.ball.data-v-65b6610f {
+	position: fixed;
+	z-index:8;
+}
+.ball .inner.data-v-65b6610f {
+	background:#24AC6B;
+	width: 30rpx;
+	height: 30rpx;
+	position: fixed;
+	border-radius: 50%;
+	opacity: 0;
+}
