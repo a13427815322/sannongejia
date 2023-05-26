@@ -7261,13 +7261,6 @@ const pages = [
       navigationBarTitleText: "",
       enablePullDownRefresh: false
     }
-  },
-  {
-    path: "pages/dingdan/dingdan",
-    style: {
-      navigationBarTitleText: "",
-      enablePullDownRefresh: false
-    }
   }
 ];
 const globalStyle = {
