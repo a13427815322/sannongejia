@@ -12,7 +12,7 @@
 		</view>
 	</scroll-view>
 	<view>
-		<view v-for="(item,index) in dingdan" :key="index" class="dingdanbox">
+		<view v-for="(item,index) in dingdan" :key="index" class="dingdanbox" @click="tospdetail(item.dingdanid)">
 			<view v-if="item.status==1" class="zhuantai"> 待付款</view>
 			<view v-if="item.status==2" class="zhuantai"> 待发货</view>
 			<view v-if="item.status==3" class="zhuantai"> 待收获</view>
@@ -75,6 +75,11 @@
 			}
 		},
 		methods: {
+			tospdetail(e){
+				uni.navigateTo({
+					url:'/pages/dingdandetail/dingdandetail?dingdanid='+e
+				})
+			},
 			back() {
 				uni.navigateBack({
 					delta: 1

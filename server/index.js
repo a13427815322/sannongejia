@@ -515,6 +515,19 @@ app.post('/updateaddress',(req,res) => {
 	});
 	
 });
+app.post('/addressdetail', (req, res) => {
+	var dingdan = req.body.dingdan;
+	// console.log(_id)
+	var sql = "select * from dingdan where dingdanid='" + dingdanid + "'"
+	
+	connection.query(sql, (err, result) => {
+		if (err) {
+			console.log("select error", err.message);
+		}
+		// console.log(result)
+		res.json(result)
+	})
+});
 app.listen(3001, () => {
 	console.log("server running at http://127.0.0.1:3001")
 })
