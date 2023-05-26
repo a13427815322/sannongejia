@@ -74,7 +74,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         d: common_vendor.o(($event) => $options.toupdate(item.id))
       };
     }),
-    e: common_vendor.o(($event) => $options.toadd(this.data[0]._id))
+    e: common_vendor.o(($event) => $options.toadd(this._id))
   };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "Y:/mui原型/三农e家/pages/addressdetail/addressdetail.vue"]]);

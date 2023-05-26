@@ -33,7 +33,7 @@
 		</view>
 	</view>
 	<view class="add">
-		<image src="../../static/加号.png" class="image" @click="toadd(this.data[0]._id)"></image>
+		<image src="../../static/加号.png" class="image" @click="toadd(this._id)"></image>
 	</view>
 </template>
 <script>
