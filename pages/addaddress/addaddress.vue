@@ -20,9 +20,7 @@
 						<uni-easyinput v-model="addressdata.useradd" placeholder="省 市 区 街道" />
 					</uni-forms-item>
 
-					<view class=""
-						style=" border-radius: 22px;background-color: #24AC6B;height:44px;text-align: center;"
-						@click="submitFrom('form')">
+					<view class="" style=" border-radius: 22px;background-color: #24AC6B;height:44px;text-align: center;"@click="submitFrom('form')">
 						<view class="" style="font-size: 22px; letter-spacing: 10px;padding: 6px;color: #ffffff;">提交
 						</view>
 					</view>
