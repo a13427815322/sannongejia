@@ -10,6 +10,11 @@ const _sfc_main = {
     };
   },
   methods: {
+    todingdan(e) {
+      common_vendor.index.navigateTo({
+        url: "/pages/dingdan/dingdan?status=" + e
+      });
+    },
     getuserinfo() {
       const value = common_vendor.index.getStorageSync("uni-id-pages-userInfo");
       if (value) {
@@ -76,7 +81,13 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         e: index
       };
     })
-  } : {});
+  } : {}, {
+    e: common_vendor.o(($event) => $options.todingdan(0)),
+    f: common_vendor.o(($event) => $options.todingdan(1)),
+    g: common_vendor.o(($event) => $options.todingdan(2)),
+    h: common_vendor.o(($event) => $options.todingdan(3)),
+    i: common_vendor.o(($event) => $options.todingdan(4))
+  });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "Y:/mui原型/三农e家/pages/me/me.vue"]]);
 wx.createPage(MiniProgramPage);

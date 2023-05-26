@@ -36,6 +36,8 @@ if (!Math) {
   "./pages/detail/detail.js";
   "./pages/addvideo/addvideo.js";
   "./pages/addcom/addcom.js";
+  "./pages/newsdetail/newsdetail.js";
+  "./pages/dingdan/dingdan.js";
 }
 const _sfc_main = {
   onLaunch: function() {

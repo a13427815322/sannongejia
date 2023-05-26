@@ -5,20 +5,51 @@
 			<view v-for="(item,index) in userinfo" :key="index" class="userinfobox">
 				<image :src="item.headSculpture" class="headSculpture"></image>
 				<view class="userinformation">
-				<view class="username">
-				 {{item.nickname}}
+					<view class="username">
+						{{item.nickname}}
+					</view>
+					<view class="nickname">账号：{{item.username}}</view>
 				</view>
-				<view class="nickname">账号：{{item.username}}</view>
+				<view class="setting" @click="tosetting">
+					<image src="../../static/Setting.png"></image>
+					<view>设置</view>
 				</view>
-				<view class="setting" @click="tosetting"><image src="../../static/Setting.png"></image><view>设置</view></view>
 				<view style="clear: both;"></view>
 			</view>
 			<!-- <button @click="tuichu">退出登录</button> -->
 		</view>
 	</view>
 	<view class="wddd">
-		<view><view>我的订单</view><view><view>全部</view><image src="../../static/right.png" class="qb"></image></view></view>
+		<view class="dingdantext">
+			<view class="dingdangleft">我的订单</view>
+			<view class="dingdangright" @click="todingdan(0)">
+				<view>全部</view>
+				<image src="../../static/right.png" class="qb"></image>
+				<view style="clear: both;"></view>
+			</view>
+			<view style="clear: both;"></view>
+		</view>
+		<view class="ddztbox">
+		<view class="ddzt" @click="todingdan(1)">
+			<image src="../../static/pay.png"></image>
+			<view>待付款</view>
+		</view >
+		<view class="ddzt" @click="todingdan(2)">
+			<image src="../../static/fahuo.png"></image>
+			<view>待发货</view>
+		</view>
+		<view class="ddzt" @click="todingdan(3)">
+			<image src="../../static/shouhuo.png"></image>
+			<view>待收货</view>
+		</view>
+		<view class="ddzt" @click="todingdan(4)">
+			<image src="../../static/pingjia.png"></image>
+			<view>待评价</view>
+		</view>
+		</view>
 	</view>
+	
+	
 
 </template>
 
@@ -34,6 +65,12 @@
 			}
 		},
 		methods: {
+			todingdan(e){
+				uni.navigateTo({
+					url:"/pages/dingdan/dingdan?status="+e
+				})
+			}
+			,
 			getuserinfo() {
 				const value = uni.getStorageSync('uni-id-pages-userInfo');
 				if (value) {
@@ -48,29 +85,28 @@
 							_id: this.userinfo._id,
 							username: this.userinfo.username,
 							nickname: this.userinfo.nickname,
-							headSculpture:'https://mp-efbf9779-c0d9-4262-ab16-a6d0746727bb.cdn.bspapp.com/cloudstorage/a5fe2ec3-7bb7-4332-b614-6195c16c590f.png',
+							headSculpture: 'https://mp-efbf9779-c0d9-4262-ab16-a6d0746727bb.cdn.bspapp.com/cloudstorage/a5fe2ec3-7bb7-4332-b614-6195c16c590f.png',
 							phone: this.userinfo.mobile
 						},
 						success: res => {
 							//console.log(res)
-							this.userinfo=res.data
+							this.userinfo = res.data
 							//console.log(this.userinfo)
 						}
 					})
 				}
 
 			},
-			zhuang(){
+			zhuang() {
 				uni.navigateTo({
 					url: '/uni_modules/uni-id-pages/pages/login/login-withpwd'
 				})
 			},
-			tosetting(){
+			tosetting() {
 				uni.navigateTo({
-					url:'/pages/setting/setting'
+					url: '/pages/setting/setting'
 				})
-			}
-			,
+			},
 			tuichu() {
 				uni.removeStorage({
 					key: 'uni-id-pages-userInfo'
@@ -85,14 +121,14 @@
 			this.getuserinfo()
 		},
 		onShow() {
-			this.userinfo={}
-			this.userinfolen=0
+			this.userinfo = {}
+			this.userinfolen = 0
 			this.getuserinfo()
 		}
-		
+
 	}
 </script>
 
 <style>
-@import "me.css";
+	@import "me.css";
 </style>

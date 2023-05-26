@@ -388,7 +388,24 @@ app.post('/detail',(req,res)=>{
         res.json(result)
     })
 });
-
+app.post('/getdingdan',(req,res)=>{
+    var _id=req.body._id;
+	var status=req.body.status;
+    console.log(status)
+	if(status==0){
+    var sql="select * from dingdan where _id='"+_id+"'";
+	}else{
+	var sql="select * from dingdan where _id='"+_id+"' and status="+status;
+	}
+	
+    connection.query(sql,(err,result)=>{
+        if(err){
+            console.log("select error",err.message);
+        }
+        console.log(result)
+        res.json(result)
+    })
+});
 app.post("/userinfo", (req, res) => {
 	var _id = req.body._id;
 	console.log(_id)

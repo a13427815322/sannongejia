@@ -31,7 +31,9 @@
     "pages/dingdandetail/dingdandetail",
     "pages/detail/detail",
     "pages/addvideo/addvideo",
-    "pages/addcom/addcom"
+    "pages/addcom/addcom",
+    "pages/newsdetail/newsdetail",
+    "pages/dingdan/dingdan"
   ],
   "window": {
     "navigationStyle": "custom"

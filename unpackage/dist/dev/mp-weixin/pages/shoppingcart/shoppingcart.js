@@ -140,7 +140,7 @@ const _sfc_main = {
           url: "http://127.0.0.1:3001/todingdan",
           method: "POST",
           data: {
-            _id: this.userinfo._id,
+            _id: this.userinfo[0]._id,
             shopcart: this.shopcartbox
           },
           success: (res) => {

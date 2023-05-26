@@ -3,7 +3,8 @@ const common_vendor = require("../common/vendor.js");
 const whiteList = [
   "/pages/me/me",
   "/",
-  "/uni_modules/uni-id-pages/pages/login/login-withpwd"
+  "/uni_modules/uni-id-pages/pages/login/login-withpwd",
+  "/uni_modules/uni-id-pages/pages/register/register"
 ];
 function hasPermission(url) {
   var value = common_vendor.index.getStorageSync("uni-id-pages-userInfo");

@@ -27,6 +27,11 @@ const _sfc_main = {
     }
   },
   methods: {
+    toNewsdetail(id) {
+      common_vendor.index.navigateTo({
+        url: "../newsdetail/newsdetail?id=" + id
+      });
+    },
     ontabtap(index) {
       this.active = index;
       this.requestindex();
@@ -72,7 +77,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         a: common_vendor.t(item.title),
         b: common_vendor.t(item.soure),
         c: common_vendor.t(item.datetime),
-        d: item.img_url
+        d: item.img_url,
+        e: common_vendor.o(($event) => $options.toNewsdetail(item.id))
       };
     })
   };
