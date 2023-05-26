@@ -441,6 +441,63 @@ app.post('/newsdetail',(req,res)=>{
         res.json(result)
     })
 });
+app.post('/addressdetail', (req, res) => {
+	var _id = req.body._id;
+	// console.log(_id)
+	var sql = "select * from address where _id='" + _id + "'"
+	
+	connection.query(sql, (err, result) => {
+		if (err) {
+			console.log("select error", err.message);
+		}
+		// console.log(result)
+		res.json(result)
+	})
+});
+app.post('/addaddress',(req,res)=>{
+	var _id = req.body._id
+	var sjr = req.body.sjr
+	var useraddress = req.body.useraddress
+	var phone = req.body.phone
+	// console.log(_id)
+	// console.log(useraddress)
+	var sql = "insert into address (_id,useraddress,phone,sjr) values (?,?,?,?)"
+	connection.query(sql,[_id,useraddress,phone,sjr],(err,result)=>{
+		if (err) {
+			console.log("select error", err.message);
+		}
+		// console.log(result)
+		res.json(result)
+	})
+});
+app.post('/updateadddetail', (req, res) => {
+	var id = req.body.id;
+	// console.log(_id)
+	var sql = "select * from address where id='" + id + "'"
+	connection.query(sql, (err, result) => {
+		if (err) {
+			console.log("select error", err.message);
+		}
+		// console.log(result)
+		res.json(result)
+	})
+});
+app.post('/updateaddress',(req,res) => {
+	var id = req.body.id
+	var sjr = req.body.sjr
+	var useraddress = req.body.useraddress
+	var phone = req.body.phone
+	console.log(req.body)
+	var sql = "update address set sjr=?,useraddress=?,phone=? where id=?"
+	connection.query(sql,[sjr,useraddress,phone,id],(err,result) =>{
+		if (err) {
+			console.log("select error", err.message);
+		}
+		// console.log(result)
+		res.json(result)
+	});
+	
+});
 app.listen(3001, () => {
 	console.log("server running at http://127.0.0.1:3001")
 })

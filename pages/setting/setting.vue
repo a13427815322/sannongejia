@@ -21,6 +21,16 @@
 			<view style="clear: both;"></view>
 		</view>
 	</view>
+	<view class="address">
+		<view class="adddetail">
+			<view class="addtext">
+				管理收货地址
+			</view>
+			<view class="">
+				<image @click="tosetaddress(this.userinfo[0]._id)" src="../../static/right.png" mode=""></image>
+			</view>
+		</view>
+	</view>
 	<view @click="tuichu" class="tuichu">退出登录</view>
 </template>
 
@@ -36,6 +46,12 @@
 			};
 		},
 		methods: {
+			tosetaddress(res){
+				console.log(res)
+				uni.navigateTo({
+					url:'/pages/addressdetail/addressdetail?_id='+res
+				})
+			},
 			back() {
 				uni.navigateBack({
 					delta: 1
