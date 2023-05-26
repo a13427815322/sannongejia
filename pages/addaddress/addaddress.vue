@@ -77,7 +77,7 @@
 					url: 'http://127.0.0.1:3001/addressdetail',
 					method: 'POST',
 					data: {
-						_id: this._id
+						_id:this._id
 					},
 				})
 				this.data = res.data
@@ -106,7 +106,7 @@
 					url: 'http://127.0.0.1:3001/addaddress',
 					method: 'POST',
 					data: {
-						_id: this.data[0]._id,
+						_id:this._id,
 						sjr: this.addressdata.sjr,
 						phone: this.addressdata.phone,
 						useraddress: this.addressdata.useradd

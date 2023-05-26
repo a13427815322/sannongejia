@@ -78,6 +78,7 @@
 			this.requestaddress()
 		},
 		onShow() {
+			this.data=[]
 			this.requestaddress()
 		}
 	}
