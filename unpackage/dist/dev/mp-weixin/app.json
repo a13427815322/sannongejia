@@ -36,7 +36,8 @@
     "pages/addressdetail/addressdetail",
     "pages/addaddress/addaddress",
     "pages/updateaddress/updateaddress",
-    "pages/dingdan/dingdan"
+    "pages/dingdan/dingdan",
+    "pages/gly/gly"
   ],
   "window": {
     "navigationStyle": "custom"

@@ -41,6 +41,7 @@ if (!Math) {
   "./pages/addaddress/addaddress.js";
   "./pages/updateaddress/updateaddress.js";
   "./pages/dingdan/dingdan.js";
+  "./pages/gly/gly.js";
 }
 const _sfc_main = {
   onLaunch: function() {

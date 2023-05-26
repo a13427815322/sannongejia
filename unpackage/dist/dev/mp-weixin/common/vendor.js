@@ -7289,6 +7289,13 @@ const pages = [
       navigationBarTitleText: "",
       enablePullDownRefresh: false
     }
+  },
+  {
+    path: "pages/gly/gly",
+    style: {
+      navigationBarTitleText: "",
+      enablePullDownRefresh: false
+    }
   }
 ];
 const globalStyle = {

@@ -290,6 +290,15 @@
 		    }
 		    
 		}
+        ,{
+            "path" : "pages/gly/gly",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationStyle": "custom"
