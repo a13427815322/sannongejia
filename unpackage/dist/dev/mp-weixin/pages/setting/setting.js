@@ -11,6 +11,12 @@ const _sfc_main = {
     };
   },
   methods: {
+    tosetaddress(res) {
+      console.log(res);
+      common_vendor.index.navigateTo({
+        url: "/pages/addressdetail/addressdetail?_id=" + res
+      });
+    },
     back() {
       common_vendor.index.navigateBack({
         delta: 1
@@ -89,7 +95,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         e: index
       };
     }),
-    e: common_vendor.o((...args) => $options.tuichu && $options.tuichu(...args))
+    e: common_vendor.o(($event) => $options.tosetaddress(this.userinfo[0]._id)),
+    f: common_vendor.o((...args) => $options.tuichu && $options.tuichu(...args))
   };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "Y:/mui原型/三农e家/pages/setting/setting.vue"]]);

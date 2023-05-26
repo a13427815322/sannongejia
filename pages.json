@@ -281,6 +281,15 @@
             }
             
         }
+		,{
+		    "path" : "pages/dingdan/dingdan",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
     ],
 	"globalStyle": {
 		"navigationStyle": "custom"

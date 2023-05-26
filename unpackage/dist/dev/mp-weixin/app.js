@@ -37,6 +37,10 @@ if (!Math) {
   "./pages/addvideo/addvideo.js";
   "./pages/addcom/addcom.js";
   "./pages/newsdetail/newsdetail.js";
+  "./pages/addressdetail/addressdetail.js";
+  "./pages/addaddress/addaddress.js";
+  "./pages/updateaddress/updateaddress.js";
+  "./pages/dingdan/dingdan.js";
 }
 const _sfc_main = {
   onLaunch: function() {

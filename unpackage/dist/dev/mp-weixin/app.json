@@ -32,7 +32,11 @@
     "pages/detail/detail",
     "pages/addvideo/addvideo",
     "pages/addcom/addcom",
-    "pages/newsdetail/newsdetail"
+    "pages/newsdetail/newsdetail",
+    "pages/addressdetail/addressdetail",
+    "pages/addaddress/addaddress",
+    "pages/updateaddress/updateaddress",
+    "pages/dingdan/dingdan"
   ],
   "window": {
     "navigationStyle": "custom"
