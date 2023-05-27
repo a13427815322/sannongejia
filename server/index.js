@@ -515,11 +515,10 @@ app.post('/updateaddress',(req,res) => {
 	});
 	
 });
-app.post('/addressdetail', (req, res) => {
-	var dingdan = req.body.dingdan;
+app.post('/dingdandetail', (req, res) => {
+	var dingdanid = req.body.dingdanid;
 	// console.log(_id)
 	var sql = "select * from dingdan where dingdanid='" + dingdanid + "'"
-	
 	connection.query(sql, (err, result) => {
 		if (err) {
 			console.log("select error", err.message);

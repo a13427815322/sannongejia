@@ -12,16 +12,16 @@
 		</view>
 	</scroll-view>
 	<view>
-		<view v-for="(item,index) in dingdan" :key="index" class="dingdanbox" @click="tospdetail(item.dingdanid)">
+		<view v-for="(item,index) in dingdan" :key="index" class="dingdanbox" >
 			<view v-if="item.status==1" class="zhuantai"> 待付款</view>
 			<view v-if="item.status==2" class="zhuantai"> 待发货</view>
 			<view v-if="item.status==3" class="zhuantai"> 待收获</view>
 			<view v-if="item.status==4" class="zhuantai"> 待评价</view>
-			<view v-for="(item,index) in item.shopcart" :key="index" class="shangpingbox">
-				<image :src="item.changpingimg" class="changpingimg" mode="aspectFit"></image>
-				<view class="shopname">{{item.shopname}}</view>
-				<view class="count">x{{item.count}}</view>
-				<view style="float: right;" class="jiage">￥{{item.jiage}}</view>
+			<view  v-for="(item1,index) in item.shopcart" :key="index" class="shangpingbox" @click="tospdetail(item.dingdanid)" >
+				<image :src="item1.changpingimg" class="changpingimg" mode="aspectFit"></image>
+				<view class="shopname">{{item1.shopname}}</view>
+				<view class="count">x{{item1.count}}</view>
+				<view style="float: right;" class="jiage">￥{{item1.jiage}}</view>
 				<view style="clear: both;"></view>
 			</view>
 			<view style="clear: both;"></view>

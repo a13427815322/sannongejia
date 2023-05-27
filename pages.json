@@ -299,6 +299,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/chooseadd/chooseadd",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationStyle": "custom"
