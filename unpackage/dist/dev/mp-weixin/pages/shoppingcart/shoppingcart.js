@@ -145,7 +145,7 @@ const _sfc_main = {
           },
           success: (res) => {
             common_vendor.index.navigateTo({
-              url: "/pages/dingdandetail/dingdandetail?id=" + res.data.insertId
+              url: "/pages/dingdandetail/dingdandetail?dingdanid=" + res.data.insertId
             });
           }
         });

@@ -41,6 +41,7 @@ const _sfc_main = {
     this.requestaddress();
   },
   onShow() {
+    this.data = [];
     this.requestaddress();
   }
 };

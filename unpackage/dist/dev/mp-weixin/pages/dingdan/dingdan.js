@@ -27,6 +27,11 @@ const _sfc_main = {
     };
   },
   methods: {
+    tospdetail(e) {
+      common_vendor.index.navigateTo({
+        url: "/pages/dingdandetail/dingdandetail?dingdanid=" + e
+      });
+    },
     back() {
       common_vendor.index.navigateBack({
         delta: 1
@@ -114,13 +119,14 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       }, item.status == 3 ? {} : {}, {
         d: item.status == 4
       }, item.status == 4 ? {} : {}, {
-        e: common_vendor.f(item.shopcart, (item2, index2, i1) => {
+        e: common_vendor.f(item.shopcart, (item1, index2, i1) => {
           return {
-            a: item2.changpingimg,
-            b: common_vendor.t(item2.shopname),
-            c: common_vendor.t(item2.count),
-            d: common_vendor.t(item2.jiage),
-            e: index2
+            a: item1.changpingimg,
+            b: common_vendor.t(item1.shopname),
+            c: common_vendor.t(item1.count),
+            d: common_vendor.t(item1.jiage),
+            e: index2,
+            f: common_vendor.o(($event) => $options.tospdetail(item.dingdanid), index2)
           };
         }),
         f: common_vendor.t(item.zongji),

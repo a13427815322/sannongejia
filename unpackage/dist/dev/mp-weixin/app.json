@@ -37,7 +37,8 @@
     "pages/addaddress/addaddress",
     "pages/updateaddress/updateaddress",
     "pages/dingdan/dingdan",
-    "pages/gly/gly"
+    "pages/gly/gly",
+    "pages/chooseadd/chooseadd"
   ],
   "window": {
     "navigationStyle": "custom"

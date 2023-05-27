@@ -1,0 +1,86 @@
+page{
+	background-color: #F5F5F5;
+}
+.addbox{
+	width: 95%;
+	margin: auto;
+	height: 81px;
+	line-height: 81px;
+	background-color: #ffffff;
+	border-radius: 8px;
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
+}
+.addbox image{
+	width: 14px;
+	height: 18px;
+	margin-left: 21px;
+}
+.jjrname {
+	font-family: 'PingFang SC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333333;
+	font-weight: 600;
+}
+.jjrphone {
+	font-family: 'PingFang SC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333333;
+	font-weight: 600;
+	margin-left: 14px;
+}
+.jjraddress {
+	font-family: 'PingFang SC';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 28px;
+	color: #333333;
+}
+.dingdanbox1{
+	background-color: #ffffff;
+	width: 95%;
+	margin: auto;
+	margin-top: 16px;
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
+	border-radius: 8px;
+}
+.ddbox{
+	width: 100%;
+}
+.shopbox {
+	float: left;
+}
+.shopbox image{
+	border-radius: 4px;
+	width: 48px;
+	height: 48px;
+	margin-left: 16px;
+}
+.shopname{
+	margin: 16px;
+	float: left;
+	margin-left: 16px;
+	font-family: 'PingFang SC';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 28px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	color: #333333;
+}
+.shopmoney{
+	margin: 16px;
+}
+.shopcount{
+}
+.total{
+	color:#24AC6B;
+	margin: 0 24px 16px 0;
+}

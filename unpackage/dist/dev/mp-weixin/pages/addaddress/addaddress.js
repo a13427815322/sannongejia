@@ -71,7 +71,7 @@ const _sfc_main = {
         url: "http://127.0.0.1:3001/addaddress",
         method: "POST",
         data: {
-          _id: this.data[0]._id,
+          _id: this._id,
           sjr: this.addressdata.sjr,
           phone: this.addressdata.phone,
           useraddress: this.addressdata.useradd
