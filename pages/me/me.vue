@@ -1,6 +1,23 @@
 <template>
 	<view class="userbackground">
-		<button @click="zhuang" v-if="userinfolen===0">anwo</button>
+		<!-- <button @click="zhuang" v-if="userinfolen===0">anwo</button> -->
+		<view v-if="userinfolen==0" @click="zhuang()">
+			<view  class="userinfobox">
+				<image :src='headSculpture' class="headSculpture"></image>
+				<view class="userinformation">
+					<view class="username">
+						未登录
+					</view>
+					<view class="nickname">账号：未登录</view>
+				</view>
+				<view class="setting" >
+					<image src="../../static/Setting.png"></image>
+					<view>设置</view>
+				</view>
+				<view style="clear: both;"></view>
+			</view>
+			<!-- <button @click="tuichu">退出登录</button> -->
+		</view>
 		<view v-if="userinfolen!==0">
 			<view v-for="(item,index) in userinfo" :key="index" class="userinfobox">
 				<image :src="item.headSculpture" class="headSculpture"></image>
@@ -30,27 +47,32 @@
 			<view style="clear: both;"></view>
 		</view>
 		<view class="ddztbox">
-		<view class="ddzt" @click="todingdan(1)">
-			<image src="../../static/pay.png"></image>
-			<view>待付款</view>
-		</view >
-		<view class="ddzt" @click="todingdan(2)">
-			<image src="../../static/fahuo.png"></image>
-			<view>待发货</view>
-		</view>
-		<view class="ddzt" @click="todingdan(3)">
-			<image src="../../static/shouhuo.png"></image>
-			<view>待收货</view>
-		</view>
-		<view class="ddzt" @click="todingdan(4)">
-			<image src="../../static/pingjia.png"></image>
-			<view>待评价</view>
-		</view>
+			<view class="ddzt" @click="todingdan(1)">
+				<image src="../../static/pay.png"></image>
+				<view>待付款</view>
+			</view>
+			<view class="ddzt" @click="todingdan(2)">
+				<image src="../../static/fahuo.png"></image>
+				<view>待发货</view>
+			</view>
+			<view class="ddzt" @click="todingdan(3)">
+				<image src="../../static/shouhuo.png"></image>
+				<view>待收货</view>
+			</view>
+			<view class="ddzt" @click="todingdan(4)">
+				<image src="../../static/pingjia.png"></image>
+				<view>待评价</view>
+			</view>
 		</view>
 	</view>
-	
-	
-
+	<view v-for="(item,index) in userinfo" :key="index" class="userinfobox">
+		<view v-if="item.role=='admin'">
+			管理员
+		</view>
+	</view>
+	<!-- 	<view v-if="userifo[0].role=='admin'" >
+		管理员
+	</view> -->
 </template>
 
 <script>
@@ -60,17 +82,16 @@
 				userinfo: {
 					headSculpture: ""
 				},
-				userinfolen: 0
-
+				userinfolen: 0,
+				headSculpture:'https://mp-efbf9779-c0d9-4262-ab16-a6d0746727bb.cdn.bspapp.com/cloudstorage/a5fe2ec3-7bb7-4332-b614-6195c16c590f.png'
 			}
 		},
 		methods: {
-			todingdan(e){
+			todingdan(e) {
 				uni.navigateTo({
-					url:"/pages/dingdan/dingdan?status="+e
+					url: "/pages/dingdan/dingdan?status=" + e
 				})
-			}
-			,
+			},
 			getuserinfo() {
 				const value = uni.getStorageSync('uni-id-pages-userInfo');
 				if (value) {
@@ -89,9 +110,9 @@
 							phone: this.userinfo.mobile
 						},
 						success: res => {
-							//console.log(res)
+							// console.log(res)
 							this.userinfo = res.data
-							//console.log(this.userinfo)
+							console.log(this.userinfo)
 						}
 					})
 				}
@@ -119,6 +140,7 @@
 		},
 		onLoad() {
 			this.getuserinfo()
+
 		},
 		onShow() {
 			this.userinfo = {}
