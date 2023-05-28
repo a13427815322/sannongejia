@@ -77,7 +77,7 @@
 		methods: {
 			tospdetail(e){
 				uni.navigateTo({
-					url:'/pages/dingdandetail/dingdandetail?dingdanid='+e
+					url:'/pages/dingdandetail/dingdandetail?dingdanid='+e +'&id=0'
 				})
 			},
 			back() {

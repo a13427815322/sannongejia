@@ -471,6 +471,18 @@ app.post('/addressdetail', (req, res) => {
 		res.json(result)
 	})
 });
+app.post('/payaddress', (req, res) => {
+	var id = req.body.id;
+	// console.log(_id)
+	var sql = "select * from address where id='" + id + "'"
+	connection.query(sql, (err, result) => {
+		if (err) {
+			console.log("select error", err.message);
+		}
+		// console.log(result)
+		res.json(result)
+	})
+});
 app.post('/addaddress',(req,res)=>{
 	var _id = req.body._id
 	var sjr = req.body.sjr
