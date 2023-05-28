@@ -15,8 +15,9 @@
 		<view v-for="(item,index) in dingdan" :key="index" class="dingdanbox">
 			<view v-if="item.status==1" class="zhuantai"> 待付款</view>
 			<view v-if="item.status==2" class="zhuantai"> 待发货</view>
-			<view v-if="item.status==3" class="zhuantai"> 待收获</view>
+			<view v-if="item.status==3" class="zhuantai"> 待收货</view>
 			<view v-if="item.status==4" class="zhuantai"> 待评价</view>
+			<view v-if="item.status==5" class="zhuantai"> 已完成</view>
 			<view v-for="(item1,index) in item.shopcart" :key="index" class="shangpingbox"
 				@click="tospdetail(item.dingdanid)">
 				<image :src="item1.changpingimg" class="changpingimg" mode="aspectFit"></image>
@@ -34,13 +35,12 @@
 			</view>
 			<view class="gongnenganniu" v-if="item.status==2">
 				<view class="qxdd" @click="deletedingdan(item.dingdanid)">取消订单</view>
-				<view class="qfk">查看订单</view>
+				<view class="qfk" @click="tospdetail(item.dingdanid)">查看订单</view>
 			</view>
 			<view class="gongnenganniu" v-if="item.status==3">
-				<view class="qfk">确认收货</view>
+				<view class="qfk" @click="qrsh(item.dingdanid)">确认收货</view>
 			</view>
 			<view class="gongnenganniu" v-if="item.status==4">
-
 				<view class="qfk">去评价</view>
 			</view>
 			<view style="clear: both;height: 16px;"></view>
@@ -76,6 +76,36 @@
 			}
 		},
 		methods: {
+			async qrsh(e){
+				uni.showModal({
+					title:'您确认已经收到货吗？',
+					success:(res)=>{
+						if(res.confirm){
+							console.log(e)
+							uni.request({
+								url: 'http://127.0.0.1:3001/shouhuo',
+								method: 'POST',
+								data: {
+									dingdanid: e,
+								},
+							})
+							setTimeout(()=>{
+								uni.showToast({
+									title:'收货成功',
+									icon:'success'
+								})
+								uni.navigateTo({
+									url:'/pages/pingjia/pingjia?dingdanid='+e
+								})
+							},1000)
+						} else{
+							
+						}
+						
+					}
+				})
+			}
+			,
 			deletedingdan(e) {
 				uni.showModal({
 					title: '确定要取消订单吗',
@@ -89,11 +119,11 @@
 									dingdanid: e
 								},
 							})
-							setTimeout(()=>{
+							setTimeout(() => {
 								uni.navigateTo({
-									url:'/pages/dingdan/dingdan?status=1'
+									url: '/pages/dingdan/dingdan?status='+this.status
 								})
-							},100)
+							}, 100)
 						} else {
 							// console.log('cancel') //点击取消之后执行的代码
 						}
@@ -106,8 +136,8 @@
 				})
 			},
 			back() {
-				uni.navigateBack({
-					delta: 1
+				uni.switchTab({
+					url:'/pages/me/me'
 				})
 			},
 			ontabtap(index) {

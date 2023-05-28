@@ -24,7 +24,7 @@
 							<view class="gwc">
 								<image src="../../static/ShoppingTrolleyfill.png"  @tap="add($event,item.shopid)"></image>
 							</view>
-							<view class="gm">购买</view>
+							<view class="gm" @click="toshopdetail(item.shopid)">购买</view>
 							<view style="clear: both;"></view>
 						</view>
 

@@ -42,7 +42,7 @@
 		</view>
 		<view class="gmbox">
 			<view class="jrgwc">加入购物车</view>
-			<view class="ljgm">立即购买</view>
+			<view class="ljgm" @click="topay">立即购买</view>
 		</view>
 	</view>
 </template>
@@ -53,44 +53,74 @@
 	export default {
 		data() {
 			return {
+				id:0,
+				shopcart:[],
 				shop: [],
-
+				_id:''
 			}
 		},
 		methods: {
+			topay(){
+				uni.request({
+					url:'http://127.0.0.1:3001/payone',
+					method: 'POST',
+					data:{
+						_id:this._id,
+						shopcart:this.shopcart
+					},
+					success:(res)=> {
+						uni.navigateTo({
+							url: '/pages/dingdandetail/dingdandetail?dingdanid=' + res.data.insertId +'&id=0'
+						})
+					}
+				})
+			},
 			back() {
 				uni.navigateBack({
 					delta: 1
 				})
+			},
+			async getshopcart(){
+				uni.request({
+					url: 'http://127.0.0.1:3001/getshop',
+					method: 'POST',
+					data: {
+						id: this.id
+					},
+					success: res => {
+						console.log(res)
+						// res.data.datetime.substring(0,5)
+						this.shop = res.data
+						console.log(this.shop[0])
+						this.shopcart.push({
+							count:1,
+							jiage: this.shop[0].jiage,
+							shopid:this.shop[0].shopid,
+							shopname : this.shop[0].shopname,
+							changpingimg: this.shop[0].changpingimg,
+							pinglunzhuantai: 0
+						})
+						console.log(this.shopcart)
+						if (this.shop[0].pingjia != null) {
+							this.pingjia = JSON.parse(this.shop[0].pingjia)
+							for( var i in this.pingjia){
+								this.pingjia[i].creattime=	new Date(this.pingjia[i].creattime).toLocaleDateString()
+							}
+							console.log(this.pingjia)
+						} else {
+							this.pingjia = []
+						}
+					}
+				
+				})
 			}
 		},
-
 		onLoad(options) {
-			console.log(options.id)
-			uni.request({
-				url: 'http://127.0.0.1:3001/getshop',
-				method: 'POST',
-				data: {
-					id: options.id
-				},
-				success: res => {
-					console.log(res)
-					// res.data.datetime.substring(0,5)
-
-					this.shop = res.data
-					if (this.shop[0].pingjia != null) {
-						this.pingjia = JSON.parse(this.shop[0].pingjia)
-						for( var i in this.pingjia){
-							this.pingjia[i].creattime=	new Date(this.pingjia[i].creattime).toLocaleDateString()
-						}
-					
-						console.log(this.pingjia)
-					} else {
-						this.pingjia = []
-					}
-				}
-
-			})
+			this.id =options.id
+			const value = uni.getStorageSync('uni-id-pages-userInfo');
+			this._id = value._id
+			console.log(this._id)
+			this.getshopcart()
 		}
 	}
 </script>

@@ -655,6 +655,32 @@ app.post('/deteledingdan', (req, res) => {
 		res.json(result)
 	})
 });
+app.post('/shouhuo', (req, res) => {
+	var dingdanid = req.body.dingdanid;
+	console.log(dingdanid)
+	var sql ="update dingdan set status=4 where dingdanid=?"
+	connection.query(sql,[dingdanid], (err, result) => {
+		if (err) {
+			console.log("select error", err.message);
+		}
+		// console.log(result)
+		res.json(result)
+	})
+});
+app.post('/payone', (req, res) => {
+	var _id = req.body._id
+	var cjtime = new Date
+	var shopcart = JSON.stringify(req.body.shopcart)
+	console.log(shopcart)
+	var sql = "insert into dingdan (_id,status,shopcart,cjtime) values (?,?,?,?)"
+	connection.query(sql,[_id,1,shopcart,cjtime],(err, result) => {
+		if (err) {
+			console.log("select error", err.message);
+		}
+		// console.log(result)
+		res.json(result)
+	})
+});
 app.listen(3001, () => {
 	console.log("server running at http://127.0.0.1:3001")
 })
