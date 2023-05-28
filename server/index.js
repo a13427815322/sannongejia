@@ -483,6 +483,24 @@ app.post('/payaddress', (req, res) => {
 		res.json(result)
 	})
 });
+//添加付款时间和付款信息
+app.post('/addpaydata', (req, res) => {
+	console.log(req.body)
+	var fukuantime = new Date
+	var dingdanid = req.body.dingdanid
+	var phone = req.body.phone
+	var sjr = req.body.sjr
+	var adress = req.body.adress
+	
+	var sql = "update dingdan set adress=?,fukuantime=?,phone=?,sjr=?,status=2 where dingdanid=?"
+	connection.query(sql,[adress,fukuantime,phone,sjr,dingdanid],(err, result) => {
+		if (err) {
+			console.log("select error", err.message);
+		}
+		console.log(result)
+		res.json(result)
+	})
+});
 app.post('/addaddress',(req,res)=>{
 	var _id = req.body._id
 	var sjr = req.body.sjr
@@ -532,6 +550,19 @@ app.post('/dingdandetail', (req, res) => {
 	// console.log(_id)
 	var sql = "select * from dingdan where dingdanid='" + dingdanid + "'"
 	connection.query(sql, (err, result) => {
+		if (err) {
+			console.log("select error", err.message);
+		}
+		// console.log(result)
+		res.json(result)
+	})
+});
+//删除订单
+app.post('/deteledingdan', (req, res) => {
+	var dingdanid = req.body.dingdanid;
+	console.log(dingdanid)
+	var sql ="delete from dingdan where dingdanid=?"
+	connection.query(sql,[dingdanid], (err, result) => {
 		if (err) {
 			console.log("select error", err.message);
 		}

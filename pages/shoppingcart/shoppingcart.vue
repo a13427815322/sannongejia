@@ -231,7 +231,7 @@
 						success: res => {
 							//console.log(res.data.insertId)
 							uni.navigateTo({
-								url: '/pages/dingdandetail/dingdandetail?dingdanid=' + res.data.insertId
+								url: '/pages/dingdandetail/dingdandetail?dingdanid=' + res.data.insertId +'&id=0'
 							})
 						}
 					})

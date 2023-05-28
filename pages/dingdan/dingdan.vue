@@ -12,12 +12,13 @@
 		</view>
 	</scroll-view>
 	<view>
-		<view v-for="(item,index) in dingdan" :key="index" class="dingdanbox" >
+		<view v-for="(item,index) in dingdan" :key="index" class="dingdanbox">
 			<view v-if="item.status==1" class="zhuantai"> 待付款</view>
 			<view v-if="item.status==2" class="zhuantai"> 待发货</view>
 			<view v-if="item.status==3" class="zhuantai"> 待收获</view>
 			<view v-if="item.status==4" class="zhuantai"> 待评价</view>
-			<view  v-for="(item1,index) in item.shopcart" :key="index" class="shangpingbox" @click="tospdetail(item.dingdanid)" >
+			<view v-for="(item1,index) in item.shopcart" :key="index" class="shangpingbox"
+				@click="tospdetail(item.dingdanid)">
 				<image :src="item1.changpingimg" class="changpingimg" mode="aspectFit"></image>
 				<view class="shopname">{{item1.shopname}}</view>
 				<view class="count">x{{item1.count}}</view>
@@ -28,13 +29,13 @@
 			<view class="zhongji">总计：￥{{item.zongji}}</view>
 			<view style="clear: both;"></view>
 			<view class="gongnenganniu" v-if="item.status==1">
-				<view class="qxdd">取消订单</view>
-				<view class="qfk">去付款</view>
+				<view class="qxdd" @click="deletedingdan(item.dingdanid)">取消订单</view>
+				<view class="qfk" @click="tospdetail(item.dingdanid)">去付款</view>
 			</view>
 			<view class="gongnenganniu" v-if="item.status==2">
-				<view class="qxdd">取消订单</view>
+				<view class="qxdd" @click="deletedingdan(item.dingdanid)">取消订单</view>
 				<view class="qfk">查看订单</view>
-			</view> 
+			</view>
 			<view class="gongnenganniu" v-if="item.status==3">
 				<view class="qfk">确认收货</view>
 			</view>
@@ -75,9 +76,33 @@
 			}
 		},
 		methods: {
-			tospdetail(e){
+			deletedingdan(e) {
+				uni.showModal({
+					title: '确定要取消订单吗',
+					success: (res) => {
+						if (res.confirm) {
+							console.log(e)
+							uni.request({
+								url: 'http://127.0.0.1:3001/deteledingdan',
+								method: 'POST',
+								data: {
+									dingdanid: e
+								},
+							})
+							setTimeout(()=>{
+								uni.navigateTo({
+									url:'/pages/dingdan/dingdan?status=1'
+								})
+							},100)
+						} else {
+							// console.log('cancel') //点击取消之后执行的代码
+						}
+					}
+				})
+			},
+			tospdetail(e) {
 				uni.navigateTo({
-					url:'/pages/dingdandetail/dingdandetail?dingdanid='+e +'&id=0'
+					url: '/pages/dingdandetail/dingdandetail?dingdanid=' + e + '&id=0'
 				})
 			},
 			back() {
@@ -90,7 +115,7 @@
 				console.log(index)
 				this.getdingdan()
 			},
-			getdingdan() {
+			async getdingdan() {
 				uni.request({
 					url: 'http://127.0.0.1:3001/getdingdan',
 					method: 'POST',
@@ -110,10 +135,12 @@
 							for (var k in this.dingdan[j].shopcart) {
 								// console.log(this.dingdan[j].shopcart[k])
 								if (this.dingdan[j].shopcart[k].shopname.length > 9) {
-									this.dingdan[j].shopcart[k].shopname = this.dingdan[j].shopcart[k].shopname
+									this.dingdan[j].shopcart[k].shopname = this.dingdan[j].shopcart[k]
+										.shopname
 										.substring(0, 9) + "..."
 								}
-								this.dingdan[j].zongji += this.dingdan[j].shopcart[k].jiage * this.dingdan[j]
+								this.dingdan[j].zongji += this.dingdan[j].shopcart[k].jiage * this.dingdan[
+										j]
 									.shopcart[k].count
 							}
 						}
@@ -134,6 +161,9 @@
 			this.userinfo = value
 			this.status = option.status
 			this.userinfo._id = String(this.userinfo._id)
+			this.getdingdan()
+		},
+		onShow() {
 			this.getdingdan()
 		}
 	}

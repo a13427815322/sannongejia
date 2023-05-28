@@ -14,8 +14,7 @@
 	</view>
 	<view class="statusbox1" v-if="this.data.status == 1" style="width: 100%;">
 		<view @click="chooseadd(this.data._id)" class="" style="margin-top: 16px;width: 100%;" v-if="this.id == 0" >
-			<view class="" style="text-align: center;height: 40px;background-color: #ffffff;width: 95%;margin: auto;box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
-border-radius: 8px;">
+			<view class="" style="text-align: center;height: 40px;background-color: #ffffff;width: 95%;margin: auto;box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);border-radius: 8px;">
 				<view class="" style="padding-top: 10px;">
 					请选择收货地址
 				</view>
@@ -80,6 +79,11 @@ border-radius: 8px;">
 		</view>
 
 	</view>
+	<view class="paybtn" v-if="this.data.status == 1">
+		<view class="" style="margin-top: 16px;">
+			<button style="width: 25%;border-radius: 30px;margin-right: 2.5%;border: none;background-color:#24AC6B; color: #ffffff;"  @click="payfinish">付款</button>
+		</view>
+	</view>
 </template>
 
 <script>
@@ -105,6 +109,27 @@ border-radius: 8px;">
 			}
 		},
 		methods: {
+			async payfinish(){
+				const res = await uni.request({
+					url: 'http://127.0.0.1:3001/addpaydata',
+					method: 'POST',
+					data: {
+						dingdanid: this.dingdanid,
+						phone:this.adddata[0].phone,
+						sjr:this.adddata[0].sjr,
+						adress:this.adddata[0].useraddress
+					},
+				})
+				uni.showToast({
+					title:'付款中',
+					icon:'loading'
+				})
+				setTimeout(()=>{
+					uni.navigateTo({
+						url: '/pages/dingdan/dingdan?status=2'
+					})
+				},1000)
+			},
 			chooseadd(e){
 				uni.navigateTo({
 					url:'/pages/chooseadd/chooseadd?_id='+e+'&dingdanid='+this.dingdanid
