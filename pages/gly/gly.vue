@@ -4,7 +4,7 @@
 		<view class="statusBar" :style="{ paddingTop: statusBarHeight + 'px' }"></view>
 		<!-- 真正的导航栏内容 -->
 		<uni-nav-bar dark :fixed="true" background-color="#ffffff" status-bar left-icon="left" left-text=""
-			color="black" title="个人信息" @clickLeft="back" />
+			color="black" title="管理员" @clickLeft="back" />
 	</view>
 	
 	<view>

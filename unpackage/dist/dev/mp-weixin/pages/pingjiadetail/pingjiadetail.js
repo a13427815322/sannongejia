@@ -113,10 +113,14 @@ const _sfc_main = {
     }
   },
   onLoad(option) {
+    console.log(option);
+    console.log(option.dingdanid);
     this.shopid = option.shopid;
     this.dingdanid = option.dingdanid;
     this.getshop();
     this.getdingdan();
+  },
+  onShow() {
   },
   created() {
   }

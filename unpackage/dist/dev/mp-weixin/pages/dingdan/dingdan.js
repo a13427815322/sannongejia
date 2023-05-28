@@ -27,14 +27,67 @@ const _sfc_main = {
     };
   },
   methods: {
+    qpj(e) {
+      common_vendor.index.navigateTo({
+        url: "/pages/pingjia/pingjia?dingdanid=" + e
+      });
+    },
+    async qrsh(e) {
+      common_vendor.index.showModal({
+        title: "您确认已经收到货吗？",
+        success: (res) => {
+          if (res.confirm) {
+            console.log(e);
+            common_vendor.index.request({
+              url: "http://127.0.0.1:3001/shouhuo",
+              method: "POST",
+              data: {
+                dingdanid: e
+              }
+            });
+            setTimeout(() => {
+              common_vendor.index.showToast({
+                title: "收货成功",
+                icon: "success"
+              });
+              common_vendor.index.navigateTo({
+                url: "/pages/pingjia/pingjia?dingdanid=" + e
+              });
+            }, 1e3);
+          }
+        }
+      });
+    },
+    deletedingdan(e) {
+      common_vendor.index.showModal({
+        title: "确定要取消订单吗",
+        success: (res) => {
+          if (res.confirm) {
+            console.log(e);
+            common_vendor.index.request({
+              url: "http://127.0.0.1:3001/deteledingdan",
+              method: "POST",
+              data: {
+                dingdanid: e
+              }
+            });
+            setTimeout(() => {
+              common_vendor.index.navigateTo({
+                url: "/pages/dingdan/dingdan?status=" + this.status
+              });
+            }, 100);
+          }
+        }
+      });
+    },
     tospdetail(e) {
       common_vendor.index.navigateTo({
-        url: "/pages/dingdandetail/dingdandetail?dingdanid=" + e
+        url: "/pages/dingdandetail/dingdandetail?dingdanid=" + e + "&id=0"
       });
     },
     back() {
-      common_vendor.index.navigateBack({
-        delta: 1
+      common_vendor.index.switchTab({
+        url: "/pages/me/me"
       });
     },
     ontabtap(index) {
@@ -42,7 +95,7 @@ const _sfc_main = {
       console.log(index);
       this.getdingdan();
     },
-    getdingdan() {
+    async getdingdan() {
       common_vendor.index.request({
         url: "http://127.0.0.1:3001/getdingdan",
         method: "POST",
@@ -76,6 +129,9 @@ const _sfc_main = {
     this.userinfo = value;
     this.status = option.status;
     this.userinfo._id = String(this.userinfo._id);
+    this.getdingdan();
+  },
+  onShow() {
     this.getdingdan();
   }
 };
@@ -119,7 +175,9 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       }, item.status == 3 ? {} : {}, {
         d: item.status == 4
       }, item.status == 4 ? {} : {}, {
-        e: common_vendor.f(item.shopcart, (item1, index2, i1) => {
+        e: item.status == 5
+      }, item.status == 5 ? {} : {}, {
+        f: common_vendor.f(item.shopcart, (item1, index2, i1) => {
           return {
             a: item1.changpingimg,
             b: common_vendor.t(item1.shopname),
@@ -129,16 +187,26 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
             f: common_vendor.o(($event) => $options.tospdetail(item.dingdanid), index2)
           };
         }),
-        f: common_vendor.t(item.zongji),
-        g: item.status == 1
-      }, item.status == 1 ? {} : {}, {
-        h: item.status == 2
-      }, item.status == 2 ? {} : {}, {
-        i: item.status == 3
-      }, item.status == 3 ? {} : {}, {
-        j: item.status == 4
-      }, item.status == 4 ? {} : {}, {
-        k: index
+        g: common_vendor.t(item.zongji),
+        h: item.status == 1
+      }, item.status == 1 ? {
+        i: common_vendor.o(($event) => $options.deletedingdan(item.dingdanid), index),
+        j: common_vendor.o(($event) => $options.tospdetail(item.dingdanid), index)
+      } : {}, {
+        k: item.status == 2
+      }, item.status == 2 ? {
+        l: common_vendor.o(($event) => $options.deletedingdan(item.dingdanid), index),
+        m: common_vendor.o(($event) => $options.tospdetail(item.dingdanid), index)
+      } : {}, {
+        n: item.status == 3
+      }, item.status == 3 ? {
+        o: common_vendor.o(($event) => $options.qrsh(item.dingdanid), index)
+      } : {}, {
+        p: item.status == 4
+      }, item.status == 4 ? {
+        q: common_vendor.o(($event) => $options.qpj(item.dingdanid), index)
+      } : {}, {
+        r: index
       });
     })
   };

@@ -1,0 +1,1 @@
+<view class="navBarBox"><view class="statusBar" style="{{'padding-top:' + a}}"></view><uni-nav-bar wx:if="{{c}}" bindclickLeft="{{b}}" u-i="601e9f09-0" bind:__l="__l" u-p="{{c}}"/></view><input bindinput="{{d}}" class="xingxiinput" placeholder="请输入你的手机号" value="{{e}}"/><view></view><view bindtap="{{f}}" class="qrxg">确认修改 </view>

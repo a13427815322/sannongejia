@@ -3,6 +3,11 @@ const common_vendor = require("../../common/vendor.js");
 const _sfc_main = {
   data() {
     return {
+      dingdan: [],
+      dfk: 0,
+      dfh: 0,
+      dsh: 0,
+      dpj: 0,
       userinfo: {
         headSculpture: ""
       },
@@ -11,6 +16,36 @@ const _sfc_main = {
     };
   },
   methods: {
+    getdingdang() {
+      console.log(this.userinfo._id);
+      common_vendor.index.request({
+        url: "http://127.0.0.1:3001/getdingdan",
+        method: "POST",
+        data: {
+          _id: this.userinfo._id,
+          status: 0
+        },
+        success: (res) => {
+          this.dingdan = res.data;
+          console.log(this.dingdan);
+          this.dfk = 0;
+          for (var i in this.dingdan) {
+            if (this.dingdan[i].status == 1) {
+              this.dfk++;
+            }
+            if (this.dingdan[i].status == 2) {
+              this.dfh++;
+            }
+            if (this.dingdan[i].status == 3) {
+              this.dsh++;
+            }
+            if (this.dingdan[i].status == 4) {
+              this.dpj++;
+            }
+          }
+        }
+      });
+    },
     toadmin() {
       common_vendor.index.navigateTo({
         url: "../gly/gly"
@@ -39,7 +74,6 @@ const _sfc_main = {
           },
           success: (res) => {
             this.userinfo = res.data;
-            console.log(this.userinfo);
           }
         });
       }
@@ -64,11 +98,18 @@ const _sfc_main = {
   },
   onLoad() {
     this.getuserinfo();
+    this.getdingdang();
   },
   onShow() {
     this.userinfo = {};
     this.userinfolen = 0;
+    this.dingdan = [];
+    this.dfk = 0;
+    this.dfh = 0;
+    this.dsh = 0;
+    this.dpj = 0;
     this.getuserinfo();
+    this.getdingdang();
   }
 };
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -91,11 +132,27 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   } : {}, {
     f: common_vendor.o(($event) => $options.todingdan(0)),
-    g: common_vendor.o(($event) => $options.todingdan(1)),
-    h: common_vendor.o(($event) => $options.todingdan(2)),
-    i: common_vendor.o(($event) => $options.todingdan(3)),
-    j: common_vendor.o(($event) => $options.todingdan(4)),
-    k: common_vendor.f($data.userinfo, (item, index, i0) => {
+    g: $data.dfk
+  }, $data.dfk ? {
+    h: common_vendor.t($data.dfk)
+  } : {}, {
+    i: common_vendor.o(($event) => $options.todingdan(1)),
+    j: $data.dfh
+  }, $data.dfh ? {
+    k: common_vendor.t($data.dfh)
+  } : {}, {
+    l: common_vendor.o(($event) => $options.todingdan(2)),
+    m: $data.dsh
+  }, $data.dsh ? {
+    n: common_vendor.t($data.dsh)
+  } : {}, {
+    o: common_vendor.o(($event) => $options.todingdan(3)),
+    p: $data.dpj
+  }, $data.dpj ? {
+    q: common_vendor.t($data.dpj)
+  } : {}, {
+    r: common_vendor.o(($event) => $options.todingdan(4)),
+    s: common_vendor.f($data.userinfo, (item, index, i0) => {
       return common_vendor.e({
         a: item.role == "admin"
       }, item.role == "admin" ? {

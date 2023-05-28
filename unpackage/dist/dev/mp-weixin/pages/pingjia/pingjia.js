@@ -3,19 +3,25 @@ const common_vendor = require("../../common/vendor.js");
 const _sfc_main = {
   data() {
     return {
+      dingdanid: 0,
+      shopcart: [],
       // 状态栏高度
       statusBarHeight: 0,
       // 导航栏高度
       navBarHeight: 82 + 11,
-      dingdanid: 18,
       dingdan: []
     };
   },
   methods: {
+    home() {
+      common_vendor.index.switchTab({
+        url: "/pages/me/me"
+      });
+    },
     topingjiadetail(shopid, dingdanid) {
       console.log(shopid, dingdanid);
       common_vendor.index.navigateTo({
-        url: "../pingjiadetail/pingjiadetail?shopid=" + shopid + "&dingdanid=" + dingdanid
+        url: "/pages/pingjiadetail/pingjiadetail?dingdanid=" + dingdanid + "&shopid=" + shopid
       });
     },
     getdingdan() {
@@ -35,11 +41,34 @@ const _sfc_main = {
   created() {
   },
   onLoad(optoin) {
+    console.log(optoin);
+    this.dingdanid = optoin.dingdanid;
     this.getdingdan();
   },
   onShow() {
     this.dingdan = [];
     this.getdingdan();
+    setTimeout(() => {
+      console.log(this.dingdan);
+      var a = 1;
+      for (var i in this.dingdan) {
+        if (this.dingdan[i].pinglunzhuantai == 0) {
+          a = 0;
+        }
+      }
+      if (a != 0) {
+        common_vendor.index.showToast({
+          title: "已全部评论",
+          icon: "success"
+        });
+        setTimeout(() => {
+          common_vendor.index.switchTab({
+            url: "/pages/me/me"
+          });
+        }, 500);
+      }
+      console.log(a);
+    }, 500);
   }
 };
 if (!Array) {
@@ -53,13 +82,13 @@ if (!Math) {
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return {
     a: $data.statusBarHeight + "px",
-    b: common_vendor.o(_ctx.back),
+    b: common_vendor.o($options.home),
     c: common_vendor.p({
       dark: true,
       fixed: true,
       ["background-color"]: "#ffffff",
       ["status-bar"]: true,
-      ["left-icon"]: "left",
+      ["left-icon"]: "home",
       ["left-text"]: "",
       color: "black",
       title: "评价"

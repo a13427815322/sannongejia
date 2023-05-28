@@ -195,15 +195,15 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     k: common_vendor.o((...args) => $options.address && $options.address(...args)),
     l: common_vendor.t(this.formData.address),
-    m: common_vendor.o($options.local),
-    n: common_vendor.o(($event) => $data.formData.address = $event),
-    o: common_vendor.p({
+    m: common_vendor.o((...args) => $options.qr && $options.qr(...args)),
+    n: common_vendor.o($options.local),
+    o: common_vendor.o(($event) => $data.formData.address = $event),
+    p: common_vendor.p({
       id: "dz",
       type: "text",
       placeholder: "请输入地址",
       modelValue: $data.formData.address
     }),
-    p: common_vendor.o((...args) => $options.qr && $options.qr(...args)),
     q: common_vendor.p({
       name: "address"
     }),

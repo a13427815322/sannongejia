@@ -4,11 +4,17 @@ const whiteList = [
   "/pages/me/me",
   "/",
   "/uni_modules/uni-id-pages/pages/login/login-withpwd",
-  "/uni_modules/uni-id-pages/pages/register/register"
+  "/uni_modules/uni-id-pages/pages/register/register",
+  "/uni_modules/uni-id-pages/pages/login/login-withoutpwd",
+  "/uni_modules/uni-id-pages/pages/login/login-smscode"
 ];
 function hasPermission(url) {
   var value = common_vendor.index.getStorageSync("uni-id-pages-userInfo");
   value = Boolean(value != "");
+  if (url.indexOf("?") != -1) {
+    url = url.substring(0, url.indexOf("?"));
+  }
+  console.log(url);
   if (whiteList.indexOf(url) !== -1 || value) {
     return true;
   }

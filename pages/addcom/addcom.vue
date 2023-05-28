@@ -34,9 +34,9 @@
 							<view id="uchange">
 								{{this.formData.address}}
 							</view>
+							<image class="img" src="../../static/right.png" mode="" @click="qr"></image>
 							<uni-easyinput @input="local" id="dz" v-model="formData.address" type="text"
 								placeholder="请输入地址" />
-							<image class="img" src="../../static/right.png" mode="" @click="qr"></image>
 							<view style="clear: both;" class="">
 							</view>
 						</view>

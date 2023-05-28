@@ -62,11 +62,11 @@ body {
 	width: 48px;
 	height: 48px;
 }
-.ddzt view{
+.ddzt view {
 	font-family: 'PingFang SC';
 	font-style: normal;
 	font-weight: 400;
-	font-size: 15px; 
+	font-size: 15px;
 	color: #333333;
 }
 .ddzt {
@@ -87,12 +87,12 @@ body {
 }
 .dingdangleft {
 	float: left;
-font-family: 'PingFang SC';
-font-style: normal;
-font-weight: 600;
-font-size: 17px;
-color: #333333;
-margin-left: 20px;
+	font-family: 'PingFang SC';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 17px;
+	color: #333333;
+	margin-left: 20px;
 }
 .dingdangright {
 	float: right;
@@ -102,24 +102,24 @@ margin-left: 20px;
 	font-size: 15px;
 	text-align: center;
 	color: #333333;
-	margin-right:10px;
+	margin-right: 10px;
 }
-.ddztbox{
+.ddztbox {
 	width: 90%;
 	margin: 0 auto;
 	padding-bottom: 16px;
 }
-.dingdantext{
+.dingdantext {
 	padding-top: 16px;
 	margin-bottom: 16px;
 }
-.gonneng image{
-	width:19px;
-	height:19px;
+.gonneng image {
+	width: 19px;
+	height: 19px;
 	float: left;
 	margin-top: 18px;
 }
-.gonneng view{
+.gonneng view {
 	display: inline-block;
 	font-family: 'PingFang SC';
 	font-style: normal;
@@ -129,8 +129,39 @@ margin-left: 20px;
 	color: #333333;
 	margin-left: 17px;
 }
-.gonneng{
+.gonneng {
 	height: 53px;
 	line-height: 53px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.gonneng1 image {
+	width: 19px;
+	height: 19px;
+	float: left;
+	margin-top: 18px;
+}
+.gonneng1 view {
+	display: inline-block;
+	font-family: 'PingFang SC';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 21px;
+	color: #333333;
+	margin-left: 17px;
+}
+.gonneng1 {
+	height: 53px;
+	line-height: 53px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.dot {
+	position: absolute;
+	background-color: red;
+	border-radius: 50%;
+	color: white;
+	width: 20px;
+	text-align: center;
+	margin-left: 35px;
+	z-index: 999;
 }

@@ -41,7 +41,7 @@
 				<view class="qfk" @click="qrsh(item.dingdanid)">确认收货</view>
 			</view>
 			<view class="gongnenganniu" v-if="item.status==4">
-				<view class="qfk">去评价</view>
+				<view class="qfk" @click="qpj(item.dingdanid)">去评价</view>
 			</view>
 			<view style="clear: both;height: 16px;"></view>
 		</view>
@@ -76,6 +76,11 @@
 			}
 		},
 		methods: {
+			qpj(e){
+				uni.navigateTo({
+					url: '/pages/pingjia/pingjia?dingdanid=' + e
+				})
+			},
 			async qrsh(e){
 				uni.showModal({
 					title:'您确认已经收到货吗？',

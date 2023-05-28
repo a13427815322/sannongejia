@@ -297,9 +297,12 @@
 			<view class="" style="float: left;margin-left: 16px;margin-top: 16px;">
 				收货信息
 			</view>
-			<view class="" style=" width: 50%;float: right;margin-right: 16px ;margin-top: 16px;">
+			<view class="" style=" width: 50%;float: right;margin-top: 16px;text-align:end;margin-right: 16px;">
 				<view class="">
-					{{this.data.sjr}},{{this.data.phone}},{{this.data.adress}}
+					{{this.data.sjr}}
+					<view class="">
+					{{this.data.phone}},{{this.data.adress}}
+					</view>
 				</view>
 			</view>
 		</view>

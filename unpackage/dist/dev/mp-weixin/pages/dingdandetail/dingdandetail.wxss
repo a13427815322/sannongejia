@@ -7,7 +7,7 @@ page{
 	height: 81px;
 	line-height: 81px;
 	background-color: #ffffff;
-	border-radius: 8px;
+	border-radius: 0 0 8px 8px;
 	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
 }
 .addbox image{
@@ -83,4 +83,18 @@ page{
 .total{
 	color:#24AC6B;
 	margin: 0 24px 16px 0;
+}
+.hybox{
+	width: 95%;
+	margin: auto;
+	height: 81px;
+	line-height: 81px;
+	background-color: #ffffff;
+	border-radius: 8px 8px 0 0 ;
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
+}
+.hybox image{
+	width: 18px;
+	height: 16px;
+	margin-left: 21px;
 }

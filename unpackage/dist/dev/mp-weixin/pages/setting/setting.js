@@ -37,6 +37,11 @@ const _sfc_main = {
         url: "/pages/grxx/grxx?id=" + this.userinfo[0]._id
       });
     },
+    tousersafe() {
+      common_vendor.index.navigateTo({
+        url: "/pages/usersafe/usersafe?id=" + this.userinfo[0]._id
+      });
+    },
     getuserinfo() {
       const value = common_vendor.index.getStorageSync("uni-id-pages-userInfo");
       this.userinfo = value;
@@ -96,7 +101,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       };
     }),
     e: common_vendor.o(($event) => $options.tosetaddress(this.userinfo[0]._id)),
-    f: common_vendor.o((...args) => $options.tuichu && $options.tuichu(...args))
+    f: common_vendor.o(($event) => $options.tousersafe(this.userinfo[0]._id)),
+    g: common_vendor.o((...args) => $options.tuichu && $options.tuichu(...args))
   };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "Y:/mui原型/三农e家/pages/setting/setting.vue"]]);

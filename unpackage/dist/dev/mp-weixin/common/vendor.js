@@ -7317,6 +7317,20 @@ const pages = [
       navigationBarTitleText: "",
       enablePullDownRefresh: false
     }
+  },
+  {
+    path: "pages/usersafe/usersafe",
+    style: {
+      navigationBarTitleText: "",
+      enablePullDownRefresh: false
+    }
+  },
+  {
+    path: "pages/phone/phone",
+    style: {
+      navigationBarTitleText: "",
+      enablePullDownRefresh: false
+    }
   }
 ];
 const globalStyle = {
@@ -7642,7 +7656,7 @@ function g(e2) {
 function m(e2) {
   return e2 && "string" == typeof e2 ? JSON.parse(e2) : e2;
 }
-const y = true, _ = "mp-weixin", v = m([]), S = _, k = m('{\n    "address": [\n        "127.0.0.1",\n        "192.168.56.1",\n        "169.254.207.164",\n        "169.254.166.39",\n        "172.17.24.174"\n    ],\n    "debugPort": 9000,\n    "initialLaunchType": "local",\n    "servePort": 7000,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/web前端开发/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), I = m('[{"provider":"aliyun","spaceName":"cloud1","spaceId":"mp-efbf9779-c0d9-4262-ab16-a6d0746727bb","clientSecret":"w/EoTyZVBk+G5eYAfUswug==","endpoint":"https://api.next.bspapp.com"}]') || [];
+const y = true, _ = "mp-weixin", v = m([]), S = _, k = m('{\n    "address": [\n        "127.0.0.1",\n        "192.168.56.1",\n        "169.254.207.164",\n        "169.254.166.39",\n        "172.17.24.174"\n    ],\n    "debugPort": 9003,\n    "initialLaunchType": "local",\n    "servePort": 7002,\n    "skipFiles": [\n        "<node_internals>/**",\n        "D:/web前端开发/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), I = m('[{"provider":"aliyun","spaceName":"cloud1","spaceId":"mp-efbf9779-c0d9-4262-ab16-a6d0746727bb","clientSecret":"w/EoTyZVBk+G5eYAfUswug==","endpoint":"https://api.next.bspapp.com"}]') || [];
 let T = "";
 try {
   T = "__UNI__87AB87D";

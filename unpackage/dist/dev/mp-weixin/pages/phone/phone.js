@@ -7,14 +7,12 @@ const _sfc_main = {
       statusBarHeight: 0,
       // 导航栏高度
       navBarHeight: 82 + 11,
-      userinfo: [{
-        birthday: null
-      }]
+      userinfo: [{ nickname: "" }]
     };
   },
   methods: {
     oninput(e) {
-      this.userinfo[0].birthday = e.detail.value;
+      this.userinfo[0].phone = e.detail.value;
     },
     back() {
       common_vendor.index.navigateBack({
@@ -23,11 +21,11 @@ const _sfc_main = {
     },
     xgnickname() {
       common_vendor.index.request({
-        url: "http://127.0.0.1:3001/updatebirthday",
+        url: "http://127.0.0.1:3001/updatephone",
         method: "POST",
         data: {
           _id: this.userinfo[0]._id,
-          birthday: this.userinfo[0].birthday
+          phone: this.userinfo[0].phone
         },
         success: (res) => {
           console.log(res);
@@ -58,12 +56,10 @@ const _sfc_main = {
       success: (res) => {
         console.log(res);
         this.userinfo = res.data;
-        console.log(this.userinfo);
-        this.userinfo[0].birthday = new Date(this.userinfo[0].birthday).toLocaleDateString().replaceAll("/", "-");
-        if (this.userinfo[0].birthday == null) {
-          this.userinfo[0].birthday = "请选择你的生日";
-          console.log(this.userinfo[0].birthday);
+        if (this.userinfo[0].phone == "undefined") {
+          this.userinfo[0].phone = null;
         }
+        console.log(this.userinfo);
       }
     });
   }
@@ -88,15 +84,12 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       ["left-icon"]: "left",
       ["left-text"]: "",
       color: "black",
-      title: "更改生日"
+      title: "手机号设置"
     }),
-    d: common_vendor.t($data.userinfo[0].birthday),
-    e: $data.userinfo[0].birthday,
-    f: common_vendor.o((...args) => $options.oninput && $options.oninput(...args)),
-    g: _ctx.startDate,
-    h: _ctx.endDate,
-    i: common_vendor.o((...args) => $options.xgnickname && $options.xgnickname(...args))
+    d: common_vendor.o([($event) => $data.userinfo[0].phone = $event.detail.value, (...args) => $options.oninput && $options.oninput(...args)]),
+    e: $data.userinfo[0].phone,
+    f: common_vendor.o((...args) => $options.xgnickname && $options.xgnickname(...args))
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "Y:/mui原型/三农e家/pages/birthday/birthday.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "Y:/mui原型/三农e家/pages/phone/phone.vue"]]);
 wx.createPage(MiniProgramPage);

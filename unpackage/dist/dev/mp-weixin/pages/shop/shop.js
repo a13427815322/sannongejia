@@ -116,7 +116,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         g: common_vendor.t(item.jiage),
         h: common_vendor.o(($event) => $options.toshopdetail(item.shopid), index),
         i: common_vendor.o(($event) => $options.add($event, item.shopid), index),
-        j: index
+        j: common_vendor.o(($event) => $options.toshopdetail(item.shopid), index),
+        k: index
       };
     }),
     c: common_vendor.sr("inCart", "190fa82a-0"),

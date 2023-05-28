@@ -21,26 +21,29 @@ uni-view .uni-file-picker{
 	margin-left: 10px;
 	margin-top: 9px;
 }
-#mr{
-	float: left;
-	margin-left: 10px;
-	margin-top: 9px;
-	
-}
-#dz{
-	width: 80%; 
-	float: left; 
-	margin-left: 10px;
-	display: none;
-}
 .address{
+	width: 80%;
 	margin-top: 20px;
-	margin-left: 75px;
+	margin: 0 auto;
+	
 }
 .address1 image{
 	width: 13.51px;
 	height: 18px;
 	margin-top: 10px;
+	display: inline-block;
+}
+#mr{
+	float: left;
+	margin-left: 10px;
+	margin-top: 9px;
+	width: 80%;
+}
+#dz{
+	width: 60%; 
+	float: left; 
+	margin-left: 10px;
+	display: none;
 }
 .address1 span{
 	font-family: 'PingFang SC';

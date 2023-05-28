@@ -45,6 +45,8 @@ if (!Math) {
   "./pages/chooseadd/chooseadd.js";
   "./pages/pingjia/pingjia.js";
   "./pages/pingjiadetail/pingjiadetail.js";
+  "./pages/usersafe/usersafe.js";
+  "./pages/phone/phone.js";
 }
 const _sfc_main = {
   onLaunch: function() {

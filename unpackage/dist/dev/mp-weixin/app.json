@@ -40,7 +40,9 @@
     "pages/gly/gly",
     "pages/chooseadd/chooseadd",
     "pages/pingjia/pingjia",
-    "pages/pingjiadetail/pingjiadetail"
+    "pages/pingjiadetail/pingjiadetail",
+    "pages/usersafe/usersafe",
+    "pages/phone/phone"
   ],
   "window": {
     "navigationStyle": "custom"

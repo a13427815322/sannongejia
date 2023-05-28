@@ -27,7 +27,7 @@
 				navBarHeight: 82 + 11,
 				dingdan: [],
 				shopid: 0,
-				dingdanid: 0,
+				dingdanid:0,
 				dingdanbox: [],
 				userinfo: [],
 				formData: {
@@ -139,11 +139,17 @@
 			},
 		},
 		onLoad(option) {
+			console.log(option)
+			console.log(option.dingdanid)
 			this.shopid = option.shopid
 			this.dingdanid = option.dingdanid
 			this.getshop()
 			this.getdingdan()
 		},
+		onShow() {
+			
+		}
+		,
 		created() {
 			//获取手机状态栏高度
 			// #ifdef APP

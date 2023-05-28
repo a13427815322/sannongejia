@@ -80,7 +80,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       ["left-icon"]: "left",
       ["left-text"]: "",
       color: "black",
-      title: "个人信息"
+      title: "管理员"
     }),
     d: common_vendor.f($data.dingdan, (item, index, i0) => {
       return common_vendor.e({

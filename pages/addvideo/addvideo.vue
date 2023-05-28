@@ -24,25 +24,23 @@
 				<uni-forms-item name="address"  v-model="formData.address">
 					<view style="border-bottom: 1px solid rgba(0, 0, 0, 0.05); width: 92%;margin: auto;" class="">
 					</view>
-					<view class="address">
-						<view class="address1">
-							<image @click="address" style="float: left;" src="../../static/localtion.png" mode="">
-							</image>
-							<view id="mr">
-								广州软件学院
-							</view>
-							<view >
-							<view id="uchange" >
-								{{this.formData.address}}
-							</view>
-							<uni-easyinput @input="local" id="dz" type="text"
-								placeholder="请输入地址"   />
-							<image class="img" src="../../static/right.png" mode="" @click="qr"></image>
-							<view style="clear: both;" class="">
-							</view>
+				<view class="address">
+					<view class="address1">
+						<image @click="address" style="float: left;" src="../../static/localtion.png" mode="">
+						</image>
+						<view id="mr">
+							广州软件学院
 						</view>
+						<view id="uchange">
+							{{this.formData.address}}
+						</view>
+						<image class="img" src="../../static/right.png" mode="" @click="qr"></image>
+						<uni-easyinput @input="local" id="dz" v-model="formData.address" type="text"
+							placeholder="请输入地址" />
+						<view style="clear: both;" class="">
 						</view>
 					</view>
+				</view>
 				</uni-forms-item>
 			</uni-forms>
 		</uni-section>

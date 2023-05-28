@@ -45,11 +45,17 @@ const _sfc_main = {
           console.log(res);
           this.userinfo = res.data;
           console.log(this.userinfo);
-          common_vendor.index.navigateBack({
-            delta: 1
-          });
         }
       });
+      setTimeout(() => {
+        common_vendor.index.showToast({
+          title: "修改成功",
+          icon: "success"
+        });
+        common_vendor.index.navigateBack({
+          delta: 1
+        });
+      }, 500);
     }
   },
   created() {

@@ -26,7 +26,6 @@
 				statusBarHeight: 0,
 				// 导航栏高度
 				navBarHeight: 82 + 11,
-				dingdanid: 18,
 				dingdan: [],
 			
 			}
@@ -40,7 +39,7 @@
 			topingjiadetail(shopid, dingdanid) {
 				console.log(shopid, dingdanid)
 				uni.navigateTo({
-					url: '/pages/dingdandetail/dingdandetail?dingdanid=' + res.data.insertId +'&id=0'
+					url: '/pages/pingjiadetail/pingjiadetail?dingdanid=' + dingdanid +'&shopid='+shopid
 				})
 			},
 			getdingdan() {
@@ -48,7 +47,7 @@
 					url: 'http://127.0.0.1:3001/dingdandetail',
 					method: 'POST',
 					data: {
-						dingdanid: this.dingdanid
+						dingdanid:this.dingdanid
 					},
 					success: res => {
 						this.dingdan = JSON.parse(res.data[0].shopcart)
@@ -72,6 +71,27 @@
 		onShow() {
 			this.dingdan = []
 			this.getdingdan()
+			setTimeout(()=>{
+				console.log(this.dingdan)
+				var a=1
+				for(var i in this.dingdan){
+					if(this.dingdan[i].pinglunzhuantai==0){
+						a=0
+					}
+				}
+				if(a!=0){
+					uni.showToast({
+						title:'已全部评论',
+						icon:'success'
+					})
+					setTimeout(()=>{
+					uni.switchTab({
+						url:'/pages/me/me'
+					})	
+					},500)
+				}
+				console.log(a)
+			},500)
 		}
 	}
 </script>

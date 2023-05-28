@@ -7,12 +7,12 @@ const _sfc_main = {
       statusBarHeight: 0,
       // 导航栏高度
       navBarHeight: 82 + 11,
-      userinfo: [{ nickname: "" }]
+      userinfo: [{ username: "" }]
     };
   },
   methods: {
     oninput(e) {
-      this.userinfo[0].nickname = e.detail.value;
+      this.userinfo[0].username = e.detail.value;
     },
     back() {
       common_vendor.index.navigateBack({
@@ -21,21 +21,27 @@ const _sfc_main = {
     },
     xgnickname() {
       common_vendor.index.request({
-        url: "http://127.0.0.1:3001/updatenickname",
+        url: "http://127.0.0.1:3001/updateusername",
         method: "POST",
         data: {
           _id: this.userinfo[0]._id,
-          nickname: this.userinfo[0].nickname
+          username: this.userinfo[0].username
         },
         success: (res) => {
           console.log(res);
           this.userinfo = res.data;
           console.log(this.userinfo);
-          common_vendor.index.navigateBack({
-            delta: 1
-          });
         }
       });
+      setTimeout(() => {
+        common_vendor.index.showToast({
+          title: "修改成功",
+          icon: "success"
+        });
+        common_vendor.index.navigateBack({
+          delta: 1
+        });
+      }, 500);
     }
   },
   created() {
@@ -50,6 +56,9 @@ const _sfc_main = {
       success: (res) => {
         console.log(res);
         this.userinfo = res.data;
+        if (this.userinfo[0].username == "undefined") {
+          this.userinfo[0].username = null;
+        }
         console.log(this.userinfo);
       }
     });
@@ -75,10 +84,10 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       ["left-icon"]: "left",
       ["left-text"]: "",
       color: "black",
-      title: "更改昵称"
+      title: "账号设置"
     }),
-    d: common_vendor.o([($event) => $data.userinfo[0].nickname = $event.detail.value, (...args) => $options.oninput && $options.oninput(...args)]),
-    e: $data.userinfo[0].nickname,
+    d: common_vendor.o([($event) => $data.userinfo[0].username = $event.detail.value, (...args) => $options.oninput && $options.oninput(...args)]),
+    e: $data.userinfo[0].username,
     f: common_vendor.o((...args) => $options.xgnickname && $options.xgnickname(...args))
   };
 }

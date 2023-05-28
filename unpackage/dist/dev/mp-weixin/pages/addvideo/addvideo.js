@@ -177,24 +177,26 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     k: common_vendor.o((...args) => $options.address && $options.address(...args)),
     l: common_vendor.t(this.formData.address),
-    m: common_vendor.o($options.local),
-    n: common_vendor.p({
+    m: common_vendor.o((...args) => $options.qr && $options.qr(...args)),
+    n: common_vendor.o($options.local),
+    o: common_vendor.o(($event) => $data.formData.address = $event),
+    p: common_vendor.p({
       id: "dz",
       type: "text",
-      placeholder: "请输入地址"
+      placeholder: "请输入地址",
+      modelValue: $data.formData.address
     }),
-    o: common_vendor.o((...args) => $options.qr && $options.qr(...args)),
-    p: common_vendor.o(($event) => $data.formData.address = $event),
-    q: common_vendor.p({
+    q: common_vendor.o(($event) => $data.formData.address = $event),
+    r: common_vendor.p({
       name: "address",
       modelValue: $data.formData.address
     }),
-    r: common_vendor.sr("form", "1aabd02a-2,1aabd02a-1"),
-    s: common_vendor.p({
+    s: common_vendor.sr("form", "1aabd02a-2,1aabd02a-1"),
+    t: common_vendor.p({
       modelValue: $data.formData,
       rules: $data.rules
     }),
-    t: common_vendor.p({
+    v: common_vendor.p({
       title: "发布问题",
       type: "line"
     })
