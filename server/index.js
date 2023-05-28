@@ -499,6 +499,91 @@ app.post('/updateadddetail', (req, res) => {
 		res.json(result)
 	})
 });
+app.post('/getadmin', (req, res) => {
+	var status = req.body.status;
+	// console.log(_id)
+	var sql = "select * from dingdan where status=" + status
+	connection.query(sql, (err, result) => {
+		if (err) {
+			console.log("select error", err.message);
+		}
+		// console.log(result)
+		res.json(result)
+	})
+});
+app.post('/pingjia', (req, res) => {
+	var dingdanid=req.body.dingdanid
+	var shopid=req.body.shopid
+	var pingjia=JSON.stringify(req.body.pingjia) 
+	// console.log(dingdanid,shopid,pingjia)
+	var sql = 'update shop set pingjia=? where shopid=?';
+	connection.query(sql,[pingjia,shopid],(err, result) => {
+		if (err) {
+			console.log("select error", err.message);
+		}
+		// console.log(result)
+	var sql1='select shopcart from dingdan where dingdanid='+dingdanid
+		connection.query(sql1,(err1, result1) => {
+			if (err1) {
+				console.log("select error", err.message);
+			}
+			result1=JSON.parse(result1[0].shopcart)
+			// console.log(result1)
+			var all=1
+			for(var i in result1){
+				if(result1[i].shopid==shopid){
+					result1[i].pinglunzhuantai=1
+					
+				}
+			}
+			for(var j in result1){
+				if(result1[j].pinglunzhuantai==0){
+					all=0
+				}
+			}
+			if(all!=0){
+				var sql4='update dingdan set status=5 where dingdanid='+dingdanid
+				connection.query(sql4,(err4, result4) => {
+					if (err4) {
+						console.log("select error", err4.message);
+					}
+					})
+			}
+			// console.log(all)
+			// console.log(result1)
+			result1=JSON.stringify(result1)
+			var sql2='update dingdan set shopcart=? where dingdanid=?'
+		connection.query(sql2,[result1,dingdanid],(err2, result2) => {
+			if (err2) {
+				console.log("select error", err2.message);
+			}
+			res.json(result2)
+			})
+			})
+	})
+});
+app.post('/fahuo', (req, res) => {
+	var dingdanid = req.body.dingdanid;
+	// console.log(_id)
+	var fahuotime=new Date
+   var sql = 'update dingdan set status=?,fahuotime=? where dingdanid=?';
+    connection.query(sql,[3,fahuotime,dingdanid],(err,result)=>{
+        
+        if(err){
+            console.log("select error",err.message);
+        }
+        // console.log(result)
+          var sql2 = "select * from dingdan where status=2" 
+          connection.query(sql2, (err1, result1) => {
+          	if (err1) {
+          		console.log("select error", err1.message);
+          	}
+          	// console.log(result)
+          	res.json(result1)
+          })
+        
+    })
+});
 app.post('/updateaddress',(req,res) => {
 	var id = req.body.id
 	var sjr = req.body.sjr
