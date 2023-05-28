@@ -134,6 +134,7 @@ const _sfc_main = {
           }
         }
         for (var k in this.shopcartbox) {
+          this.shopcartbox[k].pinglunzhuantai = 0;
           delete this.shopcartbox[k].check;
         }
         common_vendor.index.request({

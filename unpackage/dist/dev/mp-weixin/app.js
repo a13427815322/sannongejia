@@ -43,6 +43,8 @@ if (!Math) {
   "./pages/dingdan/dingdan.js";
   "./pages/gly/gly.js";
   "./pages/chooseadd/chooseadd.js";
+  "./pages/pingjia/pingjia.js";
+  "./pages/pingjiadetail/pingjiadetail.js";
 }
 const _sfc_main = {
   onLaunch: function() {

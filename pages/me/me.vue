@@ -66,8 +66,9 @@
 		</view>
 	</view>
 	<view v-for="(item,index) in userinfo" :key="index" class="userinfobox">
-		<view v-if="item.role=='admin'">
-			管理员
+		<view v-if="item.role=='admin'" class="gonneng" @click="toadmin">
+		<image src="../../static/admin.png"></image><view>管理员</view>
+			<view style="clear: both;"></view>
 		</view>
 	</view>
 	<!-- 	<view v-if="userifo[0].role=='admin'" >
@@ -87,6 +88,11 @@
 			}
 		},
 		methods: {
+			toadmin(){
+				uni.navigateTo({
+					url:'../gly/gly'
+				})
+			},
 			todingdan(e) {
 				uni.navigateTo({
 					url: "/pages/dingdan/dingdan?status=" + e
