@@ -335,6 +335,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/phone/phone",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationStyle": "custom"

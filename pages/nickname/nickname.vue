@@ -46,11 +46,18 @@
 						console.log(res)
 						this.userinfo = res.data
 						console.log(this.userinfo)
-						uni.navigateBack({
-							delta:1
-						})
+					
 					}
 				})
+				setTimeout(()=>{
+					uni.showToast({
+						title:'修改成功',
+						icon:'success'
+					})
+					uni.navigateBack({
+						delta:1
+					})
+				},500)
 			}
 		},created() {
 			//获取手机状态栏高度

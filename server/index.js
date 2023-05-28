@@ -91,6 +91,32 @@ app.post("/updatenickname", (req, res) => {
 		res.json(result)
 	})
 });
+app.post("/updateusername", (req, res) => {
+	var _id = req.body._id;
+	console.log(_id)
+	var username = req.body.username
+	var sql = "update userinfo set username='" + username + "' where _id='" + _id + "'"
+	connection.query(sql, (err, result) => {
+		if (err) {
+			console.log("select error", err.message);
+		}
+		console.log(result)
+		res.json(result)
+	})
+});
+app.post("/updatephone", (req, res) => {
+	var _id = req.body._id;
+	console.log(_id)
+	var phone = req.body.phone
+	var sql = "update userinfo set phone='" + phone + "' where _id='" + _id + "'"
+	connection.query(sql, (err, result) => {
+		if (err) {
+			console.log("select error", err.message);
+		}
+		console.log(result)
+		res.json(result)
+	})
+});
 app.post("/updatesex", (req, res) => {
 	var _id = req.body._id;
 	console.log(_id)
@@ -648,6 +674,18 @@ app.post('/deteledingdan', (req, res) => {
 	console.log(dingdanid)
 	var sql ="delete from dingdan where dingdanid=?"
 	connection.query(sql,[dingdanid], (err, result) => {
+		if (err) {
+			console.log("select error", err.message);
+		}
+		// console.log(result)
+		res.json(result)
+	})
+});
+app.post('/deteleuserifo', (req, res) => {
+	var _id = req.body._id;
+	
+	var sql ="delete from userinfo where _id=?"
+	connection.query(sql,[_id], (err, result) => {
 		if (err) {
 			console.log("select error", err.message);
 		}

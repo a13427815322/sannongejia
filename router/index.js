@@ -4,13 +4,19 @@ const whiteList = [
   '/pages/me/me',
   '/',
   '/uni_modules/uni-id-pages/pages/login/login-withpwd',
-  '/uni_modules/uni-id-pages/pages/register/register'
+  '/uni_modules/uni-id-pages/pages/register/register',
+  '/uni_modules/uni-id-pages/pages/login/login-withoutpwd',
+  '/uni_modules/uni-id-pages/pages/login/login-smscode'
 ]
 function hasPermission (url) {
 var value = uni.getStorageSync('uni-id-pages-userInfo');		
   value =Boolean(value!='');//返回布尔值
     // 在白名单中或有登录判断条件可以直接跳转
-	// console.log(url)
+	
+	if(url.indexOf('?')!=-1){
+		url=url.substring(0,url.indexOf('?'))
+	}
+	console.log(url)
     if(whiteList.indexOf(url) !== -1 || value) {
         return true
     }

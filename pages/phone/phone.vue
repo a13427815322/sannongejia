@@ -4,10 +4,10 @@
 		<view class="statusBar" :style="{ paddingTop: statusBarHeight + 'px' }"></view>
 		<!-- 真正的导航栏内容 -->
 		<uni-nav-bar dark :fixed="true" background-color="#ffffff" status-bar left-icon="left" left-text=""
-			color="black" title="账号设置" @clickLeft="back" />
+			color="black" title="手机号设置" @clickLeft="back" />
 	</view>
 
-	<input  v-model="userinfo[0].username" @input="oninput" class="xingxiinput" placeholder="请输入你的账号" />
+	<input  v-model="userinfo[0].phone" @input="oninput" class="xingxiinput" placeholder="请输入你的手机号" />
 	<view></view>
 	<view @click="xgnickname" class="qrxg">确认修改
 </view>
@@ -22,13 +22,13 @@
 			statusBarHeight: 0,
 			// 导航栏高度
 			navBarHeight: 82 + 11,
-			userinfo: [{username:''}],
+			userinfo: [{nickname:''}],
 			
 			}
 		},
 		methods: {oninput(e){
 			
-			this.userinfo[0].username=e.detail.value
+			this.userinfo[0].phone=e.detail.value
 			
 		},
 			back() {
@@ -38,18 +38,16 @@
 			},
 			xgnickname(){
 				uni.request({
-					url: 'http://127.0.0.1:3001/updateusername',
+					url: 'http://127.0.0.1:3001/updatephone',
 					method: 'POST',
 					data: {
 						_id:this.userinfo[0]._id,
-						username:this.userinfo[0].username
+						phone:this.userinfo[0].phone
 					},
 					success: res => {
 						console.log(res)
 						this.userinfo = res.data
 						console.log(this.userinfo)
-						
-						
 						
 					}
 				})
@@ -80,8 +78,8 @@
 			success: res => {
 				console.log(res)
 				this.userinfo = res.data
-				if(this.userinfo[0].username=="undefined"){
-					this.userinfo[0].username=null
+				if(this.userinfo[0].phone=="undefined"){
+					this.userinfo[0].phone=null
 				}
 				console.log(this.userinfo)
 			}
