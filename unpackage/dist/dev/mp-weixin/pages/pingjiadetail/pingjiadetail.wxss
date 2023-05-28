@@ -1,0 +1,22 @@
+.textarea{
+	width: 80%;
+	margin: 0 auto;
+	border: 1px solid #24AC6B;
+	border-radius: 4px;
+}
+.fbpl{
+	color: white;
+	border: 1px solid #24AC6B;
+	background-color: #24AC6B;
+	display: inline-block;
+	width: 79px;
+	border-radius: 22px;
+	font-family: 'PingFang SC';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 28px;
+	text-align: center;
+	margin-right:10%;
+	float: right;
+}

@@ -14,7 +14,7 @@
 			</uni-forms-item>
 		</uni-forms>
 	</uni-section>
-	<view @click="pinglun('form')">发表评论</view>
+	<view @click="pinglun('form')" class="fbpl">发表评论</view>
 </template>
 
 <script>
@@ -161,5 +161,5 @@
 </script>
 
 <style>
-
+@import 'pingjiadetail.css';
 </style>
