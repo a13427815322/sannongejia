@@ -6,10 +6,16 @@ const _sfc_main = {
       userinfo: {
         headSculpture: ""
       },
-      userinfolen: 0
+      userinfolen: 0,
+      headSculpture: "https://mp-efbf9779-c0d9-4262-ab16-a6d0746727bb.cdn.bspapp.com/cloudstorage/a5fe2ec3-7bb7-4332-b614-6195c16c590f.png"
     };
   },
   methods: {
+    toadmin() {
+      common_vendor.index.navigateTo({
+        url: "../gly/gly"
+      });
+    },
     todingdan(e) {
       common_vendor.index.navigateTo({
         url: "/pages/dingdan/dingdan?status=" + e
@@ -33,6 +39,7 @@ const _sfc_main = {
           },
           success: (res) => {
             this.userinfo = res.data;
+            console.log(this.userinfo);
           }
         });
       }
@@ -66,13 +73,14 @@ const _sfc_main = {
 };
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
-    a: $data.userinfolen === 0
-  }, $data.userinfolen === 0 ? {
-    b: common_vendor.o((...args) => $options.zhuang && $options.zhuang(...args))
+    a: $data.userinfolen == 0
+  }, $data.userinfolen == 0 ? {
+    b: $data.headSculpture,
+    c: common_vendor.o(($event) => $options.zhuang())
   } : {}, {
-    c: $data.userinfolen !== 0
+    d: $data.userinfolen !== 0
   }, $data.userinfolen !== 0 ? {
-    d: common_vendor.f($data.userinfo, (item, index, i0) => {
+    e: common_vendor.f($data.userinfo, (item, index, i0) => {
       return {
         a: item.headSculpture,
         b: common_vendor.t(item.nickname),
@@ -82,11 +90,20 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       };
     })
   } : {}, {
-    e: common_vendor.o(($event) => $options.todingdan(0)),
-    f: common_vendor.o(($event) => $options.todingdan(1)),
-    g: common_vendor.o(($event) => $options.todingdan(2)),
-    h: common_vendor.o(($event) => $options.todingdan(3)),
-    i: common_vendor.o(($event) => $options.todingdan(4))
+    f: common_vendor.o(($event) => $options.todingdan(0)),
+    g: common_vendor.o(($event) => $options.todingdan(1)),
+    h: common_vendor.o(($event) => $options.todingdan(2)),
+    i: common_vendor.o(($event) => $options.todingdan(3)),
+    j: common_vendor.o(($event) => $options.todingdan(4)),
+    k: common_vendor.f($data.userinfo, (item, index, i0) => {
+      return common_vendor.e({
+        a: item.role == "admin"
+      }, item.role == "admin" ? {
+        b: common_vendor.o((...args) => $options.toadmin && $options.toadmin(...args), index)
+      } : {}, {
+        c: index
+      });
+    })
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "Y:/mui原型/三农e家/pages/me/me.vue"]]);

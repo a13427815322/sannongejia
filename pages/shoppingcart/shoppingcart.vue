@@ -218,6 +218,7 @@
 						}
 					}
 					for (var k in this.shopcartbox) {
+						this.shopcartbox[k].pinglunzhuantai=0
 						delete this.shopcartbox[k].check
 					}
 					//console.log(this.shopcartbox)

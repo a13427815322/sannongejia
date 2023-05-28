@@ -4,7 +4,7 @@
 		<view class="statusBar" :style="{ paddingTop: statusBarHeight + 'px' }"></view>
 		<!-- 真正的导航栏内容 -->
 		<uni-nav-bar dark :fixed="true" background-color="#ffffff" status-bar left-icon="left" left-text=""
-			color="black" title="个人信息" @clickLeft="back" />
+			color="black" title="订单详情" @clickLeft="back" />
 	</view>
 	<scroll-view scroll-x class="tabs-title" style="white-space: nowrap">
 		<view v-for="(item,index) in tabList" :key="index" @click="ontabtap(index)">

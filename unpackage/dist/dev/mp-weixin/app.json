@@ -38,7 +38,9 @@
     "pages/updateaddress/updateaddress",
     "pages/dingdan/dingdan",
     "pages/gly/gly",
-    "pages/chooseadd/chooseadd"
+    "pages/chooseadd/chooseadd",
+    "pages/pingjia/pingjia",
+    "pages/pingjiadetail/pingjiadetail"
   ],
   "window": {
     "navigationStyle": "custom"

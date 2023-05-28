@@ -26,6 +26,9 @@ const _sfc_main = {
         this.shop = res.data;
         if (this.shop[0].pingjia != null) {
           this.pingjia = JSON.parse(this.shop[0].pingjia);
+          for (var i in this.pingjia) {
+            this.pingjia[i].creattime = new Date(this.pingjia[i].creattime).toLocaleDateString();
+          }
           console.log(this.pingjia);
         } else {
           this.pingjia = [];
