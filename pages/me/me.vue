@@ -141,6 +141,9 @@
 						this.dingdan = res.data
 						console.log(this.dingdan)
 						this.dfk = 0
+						this.dfh=0
+						this.dsh=0
+						this.dpj=0
 						for (var i in this.dingdan){
 							if(this.dingdan[i].status==1){
 								this.dfk++

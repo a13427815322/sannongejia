@@ -296,7 +296,7 @@ app.post("/toshopcart", (req, res) => {
 app.post('/updatelike',(req,res)=>{
     var id=req.body.id;
     // console.log(id)
-    var sql ="select * from helpcommunity where id=" + id;
+    var sql ="select * from helpcommunity where id=" + id+ " order by creattime desc";
     connection.query(sql,(err,result)=>{
         if(err){
             console.log("select error",err.message);
@@ -419,9 +419,9 @@ app.post('/getdingdan',(req,res)=>{
 	var status=req.body.status;
     console.log(status)
 	if(status==0){
-    var sql="select * from dingdan where _id='"+_id+"'";
+    var sql="select * from dingdan where _id='"+_id+"'" + " order by cjtime desc";
 	}else{
-	var sql="select * from dingdan where _id='"+_id+"' and status="+status;
+	var sql="select * from dingdan where _id='"+_id+"' and status="+status+ " order by cjtime desc";
 	}
 	
     connection.query(sql,(err,result)=>{
