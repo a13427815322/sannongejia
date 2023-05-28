@@ -32,6 +32,9 @@
 			</view>
 		</view>
 	</view>
+	<view class="" v-if="this.status==2" style="color: red;float: right;padding-right: 16px;margin-top: 16px;">
+		！地址只能修改一次
+	</view>
 	<view class="add">
 		<image src="../../static/加号.png" class="image" @click="toadd(this._id)"></image>
 	</view>
@@ -40,6 +43,7 @@
 	export default {
 		data() {
 			return {
+				status:0,
 				dingdanid:0,
 				_id: '',
 				data: []
@@ -85,6 +89,7 @@
 			console.log(this._id)
 			this.dingdanid = e.dingdanid
 			this.requestaddress()
+			this.status = e.status
 		},
 		onShow() {
 			this.data=[]
