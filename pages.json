@@ -326,6 +326,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/usersafe/usersafe",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationStyle": "custom"

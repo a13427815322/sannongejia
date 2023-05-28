@@ -21,13 +21,23 @@
 			<view style="clear: both;"></view>
 		</view>
 	</view>
-	<view class="address">
+	<view class="address" @click="tosetaddress(this.userinfo[0]._id)">
 		<view class="adddetail">
 			<view class="addtext">
 				管理收货地址
 			</view>
 			<view class="">
-				<image @click="tosetaddress(this.userinfo[0]._id)" src="../../static/right.png" mode=""></image>
+				<image  src="../../static/right.png" mode=""></image>
+			</view>
+		</view>
+	</view>
+	<view class="address" @click="tousersafe(this.userinfo[0]._id)">
+		<view class="adddetail">
+			<view class="addtext">
+				账号安全
+			</view>
+			<view class="">
+				<image  src="../../static/right.png" mode=""></image>
 			</view>
 		</view>
 	</view>
@@ -71,6 +81,11 @@
 				// console.log(this.userinfo[0]._id)
 				uni.navigateTo({
 					url:'/pages/grxx/grxx?id='+this.userinfo[0]._id
+				})
+			},
+			tousersafe(){
+				uni.navigateTo({
+					url:'/pages/usersafe/usersafe?id='+this.userinfo[0]._id
 				})
 			},
 			getuserinfo(){

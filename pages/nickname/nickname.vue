@@ -101,5 +101,6 @@
 	border-radius: 4px;
 	color: #ffffff;
 	bottom: 5%;
+	max-width: 648px;
 }
 </style>
