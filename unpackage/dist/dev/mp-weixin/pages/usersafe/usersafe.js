@@ -16,7 +16,6 @@ const _sfc_main = {
         title: "确定要注销账号吗",
         success: (res) => {
           if (res.confirm) {
-            console.log(this._id);
             common_vendor.index.request({
               url: "http://127.0.0.1:3001/deteleuserifo",
               method: "POST",
@@ -24,12 +23,10 @@ const _sfc_main = {
                 _id: this._id
               },
               success: (res2) => {
-                console.log(res2);
                 common_vendor.index.removeStorage({
                   key: "uni-id-pages-userInfo"
                 });
                 this.userinfo = [];
-                console.log(common_vendor.index.getStorageSync("uni-id-pages-userInfo"));
               }
             });
             setTimeout(() => {
@@ -58,7 +55,6 @@ const _sfc_main = {
     }
   },
   onLoad(options) {
-    console.log(options.id);
     this._id = options.id;
   },
   created() {

@@ -128,7 +128,7 @@
 		},
 		methods: {
 			getdingdang() {
-				console.log(this.userinfo._id)
+				//console.log(this.userinfo._id)
 				uni.request({
 					url: 'http://127.0.0.1:3001/getdingdan',
 					method: 'POST',
@@ -139,7 +139,7 @@
 					success: res => {
 						//console.log(res)
 						this.dingdan = res.data
-						console.log(this.dingdan)
+						//console.log(this.dingdan)
 						this.dfk = 0
 						this.dfh=0
 						this.dsh=0

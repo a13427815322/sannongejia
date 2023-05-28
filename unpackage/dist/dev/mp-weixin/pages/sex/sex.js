@@ -33,7 +33,6 @@ const _sfc_main = {
       });
     },
     xgnickname() {
-      console.log(this.userinfo[0].sex);
       common_vendor.index.request({
         url: "http://127.0.0.1:3001/updatesex",
         method: "POST",
@@ -42,9 +41,7 @@ const _sfc_main = {
           sex: this.userinfo[0].sex
         },
         success: (res) => {
-          console.log(res);
           this.userinfo = res.data;
-          console.log(this.userinfo);
         }
       });
       setTimeout(() => {
@@ -68,9 +65,7 @@ const _sfc_main = {
         _id: optoin.id
       },
       success: (res) => {
-        console.log(res);
         this.userinfo = res.data;
-        console.log(this.userinfo);
         if (this.userinfo[0].sex == "undefined") {
           this.userinfo[0].sex = "";
         }

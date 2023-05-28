@@ -30,9 +30,7 @@ const _sfc_main = {
           birthday: this.userinfo[0].birthday
         },
         success: (res) => {
-          console.log(res);
           this.userinfo = res.data;
-          console.log(this.userinfo);
         }
       });
       setTimeout(() => {
@@ -56,13 +54,10 @@ const _sfc_main = {
         _id: optoin.id
       },
       success: (res) => {
-        console.log(res);
         this.userinfo = res.data;
-        console.log(this.userinfo);
         this.userinfo[0].birthday = new Date(this.userinfo[0].birthday).toLocaleDateString().replaceAll("/", "-");
         if (this.userinfo[0].birthday == null) {
           this.userinfo[0].birthday = "请选择你的生日";
-          console.log(this.userinfo[0].birthday);
         }
       }
     });

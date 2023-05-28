@@ -29,7 +29,6 @@ const _sfc_main = {
   methods: {
     add(e, id) {
       this.$refs.inCart.addToCart(e, id);
-      console.log(id);
       common_vendor.index.showToast({
         title: "添加购物车成功",
         icon: "true"
@@ -42,7 +41,6 @@ const _sfc_main = {
           shopid: id
         },
         success: (res) => {
-          console.log(res);
         }
       });
     },
@@ -53,7 +51,6 @@ const _sfc_main = {
     },
     ontabtap(index) {
       this.active = index;
-      console.log(this.active);
       this.Requestshop();
     },
     Requestshop() {
@@ -64,7 +61,6 @@ const _sfc_main = {
           type: this.active
         },
         success: (res) => {
-          console.log(res);
           this.shop = res.data;
         }
       });

@@ -14,7 +14,6 @@ function hasPermission(url) {
   if (url.indexOf("?") != -1) {
     url = url.substring(0, url.indexOf("?"));
   }
-  console.log(url);
   if (whiteList.indexOf(url) !== -1 || value) {
     return true;
   }

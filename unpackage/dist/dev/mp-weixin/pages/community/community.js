@@ -64,7 +64,6 @@ const _sfc_main = {
       common_vendor.index.showActionSheet({
         itemList: ["上传图片", "上传视频"],
         success(res) {
-          console.log(res.tapIndex);
           if (res.tapIndex == 0) {
             common_vendor.index.navigateTo({
               url: "/pages/addcom/addcom"
@@ -76,7 +75,6 @@ const _sfc_main = {
           }
         },
         fail(res) {
-          console.log(res.errMsg);
         }
       });
     },
@@ -86,7 +84,6 @@ const _sfc_main = {
       });
     },
     dianzan(res) {
-      console.log(res);
       this.id = res;
       this.updatelike();
     },

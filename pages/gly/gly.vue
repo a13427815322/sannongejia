@@ -52,7 +52,7 @@
 		},
 		methods: {
 			qrfh(dingdanid){
-				// console.log(dingdanid)
+				// //console.log(dingdanid)
 				uni.request({
 					url: 'http://127.0.0.1:3001/fahuo',
 					method: 'POST',
@@ -60,7 +60,7 @@
 						dingdanid:dingdanid
 					},
 					success: res => {
-						// console.log(res)
+						// //console.log(res)
 						this.getdingdan()
 					}
 				})
@@ -88,7 +88,7 @@
 						}
 						for (var j in this.dingdan) {
 							for (var k in this.dingdan[j].shopcart) {
-								// console.log(this.dingdan[j].shopcart[k])
+								// //console.log(this.dingdan[j].shopcart[k])
 								if (this.dingdan[j].shopcart[k].shopname.length > 9) {
 									this.dingdan[j].shopcart[k].shopname = this.dingdan[j].shopcart[k].shopname
 										.substring(0, 9) + "..."
@@ -97,7 +97,7 @@
 									.shopcart[k].count
 							}
 						}
-						console.log(this.dingdan)
+						//console.log(this.dingdan)
 					}
 				})
 			}

@@ -54,7 +54,6 @@ const _sfc_main = {
           },
           success: (res) => {
             this.userinfo = res.data;
-            console.log(this.userinfo[0].nickname);
           }
         });
       }
@@ -89,7 +88,6 @@ const _sfc_main = {
       this.createtime = this.formatDateTime(createtime);
       this.$refs[ref].validate().then((res) => {
         this.formData = res;
-        console.log(res);
         setTimeout(() => {
           this.addtopic();
         });
@@ -97,7 +95,6 @@ const _sfc_main = {
           delta: 1
         });
       }).catch((err) => {
-        console.log(err);
       });
     },
     async addtopic() {

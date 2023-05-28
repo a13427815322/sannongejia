@@ -51,7 +51,7 @@
 		},
 		methods: {
 			topay(res){
-				console.log(res)
+				//console.log(res)
 				uni.navigateTo({
 					url: '/pages/dingdandetail/dingdandetail?id='+res+'&_id='+this._id+'&dingdanid='+this.dingdanid
 				})
@@ -81,12 +81,12 @@
 					},
 				})
 				this.data = res.data
-				console.log(this.data)
+				//console.log(this.data)
 			}
 		},
 		onLoad(e) {
 			this._id = e._id
-			console.log(this._id)
+			//console.log(this._id)
 			this.dingdanid = e.dingdanid
 			this.requestaddress()
 			this.status = e.status

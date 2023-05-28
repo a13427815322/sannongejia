@@ -53,7 +53,7 @@
 			this.requestindex();
 			const value = uni.getStorageSync('uni-id-pages-userInfo');
 			    if (value) {
-			        console.log(value);
+			        //console.log(value);
 					
 			    }
 		},
@@ -77,7 +77,7 @@
 						type: this.active
 					},
 					success: res => {
-						console.log(res)
+						//console.log(res)
 						for(let index in res.data){
 							res.data[index].datetime=new Date(res.data[index].datetime).toLocaleDateString();
 						

@@ -37,10 +37,8 @@ const _sfc_main = {
         },
         success: (res) => {
           this.shop = res.data;
-          console.log(this.shop);
           if (this.shop[0].pingjia != null) {
             this.pingjia = JSON.parse(this.shop[0].pingjia);
-            console.log(this.pingjia);
           } else {
             this.pingjia = [];
           }
@@ -89,7 +87,6 @@ const _sfc_main = {
         success: (res) => {
           this.dingdanbox = res.data[0];
           this.dingdan = JSON.parse(res.data[0].shopcart);
-          console.log(this.dingdanbox);
           this.getuserinfo();
         }
       });
@@ -107,14 +104,11 @@ const _sfc_main = {
         },
         success: (res) => {
           this.userinfo = res.data;
-          console.log(this.userinfo);
         }
       });
     }
   },
   onLoad(option) {
-    console.log(option);
-    console.log(option.dingdanid);
     this.shopid = option.shopid;
     this.dingdanid = option.dingdanid;
     this.getshop();

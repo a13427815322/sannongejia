@@ -43,9 +43,9 @@
 						nickname:this.userinfo[0].nickname
 					},
 					success: res => {
-						console.log(res)
+						//console.log(res)
 						this.userinfo = res.data
-						console.log(this.userinfo)
+						//console.log(this.userinfo)
 					
 					}
 				})
@@ -74,12 +74,12 @@
 				_id: optoin.id
 			},
 			success: res => {
-				console.log(res)
+				//console.log(res)
 				this.userinfo = res.data
 				if (this.userinfo[0].nickname == 'undefined') {
 					this.userinfo[0].nickname = ''
 				}
-				console.log(this.userinfo)
+				//console.log(this.userinfo)
 			}
 		})
 		}

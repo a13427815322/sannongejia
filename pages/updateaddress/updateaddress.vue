@@ -54,12 +54,12 @@
 					},
 				})
 				this.data = res.data[0]
-				console.log(this.data)
+				//console.log(this.data)
 			},
 			submitFrom(ref) {
 				this.$refs[ref].validate().then(res => {
 					this.addressdata = res
-					console.log(this.addressdata)
+					//console.log(this.addressdata)
 					if(this.addressdata.sjr == ''){
 						this.addressdata.sjr = this.data.sjr
 					}
@@ -78,7 +78,7 @@
 						uni.navigateBack({delta: 1})
 					}, 1000)
 				}).catch(err => {
-					console.log(err)
+					//console.log(err)
 				})
 			},
 			async updateaddress(){
@@ -96,7 +96,7 @@
 		},
 		onLoad(e) {
 			this.id = e.id
-			console.log(this.id)
+			//console.log(this.id)
 			this.requestaddress()
 		}
 	}

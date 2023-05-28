@@ -106,10 +106,10 @@
 						id: this.id
 					},
 					success: res => {
-						console.log(res)
+						//console.log(res)
 						// res.data.datetime.substring(0,5)
 						this.shop = res.data
-						console.log(this.shop[0])
+						//console.log(this.shop[0])
 						this.shopcart.push({
 							count:1,
 							jiage: this.shop[0].jiage,
@@ -118,13 +118,13 @@
 							changpingimg: this.shop[0].changpingimg,
 							pinglunzhuantai: 0
 						})
-						console.log(this.shopcart)
+						//console.log(this.shopcart)
 						if (this.shop[0].pingjia != null) {
 							this.pingjia = JSON.parse(this.shop[0].pingjia)
 							for( var i in this.pingjia){
 								this.pingjia[i].creattime=	new Date(this.pingjia[i].creattime).toLocaleDateString()
 							}
-							console.log(this.pingjia)
+							//console.log(this.pingjia)
 						} else {
 							this.pingjia = []
 						}
@@ -137,7 +137,7 @@
 			this.id =options.id
 			const value = uni.getStorageSync('uni-id-pages-userInfo');
 			this._id = value._id
-			console.log(this._id)
+			//console.log(this._id)
 			this.getshopcart()
 		}
 	}

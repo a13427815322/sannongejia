@@ -74,7 +74,7 @@
 		methods: {
 			add(e,id){
 				this.$refs.inCart.addToCart(e,id);
-				console.log(id)
+				//console.log(id)
 				uni.showToast({
 					title:'添加购物车成功',
 					icon:'true'
@@ -87,7 +87,7 @@
 						shopid:id
 					},
 					success: res => {
-						console.log(res)
+						//console.log(res)
 						// res.data.datetime.substring(0,5)
 						
 					}
@@ -102,7 +102,7 @@
 			},
 			ontabtap(index) {
 				this.active = index
-				console.log(this.active)
+				//console.log(this.active)
 				this.Requestshop()
 			},
 			Requestshop() {
@@ -113,7 +113,7 @@
 						type: this.active
 					},
 					success: res => {
-						console.log(res)
+						//console.log(res)
 						// res.data.datetime.substring(0,5)
 						this.shop = res.data
 					}

@@ -37,7 +37,7 @@
 				})
 			},
 			topingjiadetail(shopid, dingdanid) {
-				console.log(shopid, dingdanid)
+				//console.log(shopid, dingdanid)
 				uni.navigateTo({
 					url: '/pages/pingjiadetail/pingjiadetail?dingdanid=' + dingdanid +'&shopid='+shopid
 				})
@@ -51,7 +51,7 @@
 					},
 					success: res => {
 						this.dingdan = JSON.parse(res.data[0].shopcart)
-						console.log(this.dingdan)
+						//console.log(this.dingdan)
 					}
 				})
 			}
@@ -64,7 +64,7 @@
 
 		},
 		onLoad(optoin) {
-			console.log(optoin)
+			//console.log(optoin)
 			this.dingdanid = optoin.dingdanid
 			this.getdingdan()
 		},
@@ -72,7 +72,7 @@
 			this.dingdan = []
 			this.getdingdan()
 			setTimeout(()=>{
-				console.log(this.dingdan)
+				//console.log(this.dingdan)
 				var a=1
 				for(var i in this.dingdan){
 					if(this.dingdan[i].pinglunzhuantai==0){
@@ -90,7 +90,7 @@
 					})	
 					},500)
 				}
-				console.log(a)
+				//console.log(a)
 			},500)
 		}
 	}

@@ -54,7 +54,7 @@
 				})
 			},
 			xgnickname() {
-				console.log(this.userinfo[0].sex)
+				//console.log(this.userinfo[0].sex)
 				uni.request({
 					url: 'http://127.0.0.1:3001/updatesex',
 					method: 'POST',
@@ -63,9 +63,9 @@
 						sex: this.userinfo[0].sex
 					},
 					success: res => {
-						console.log(res)
+						//console.log(res)
 						this.userinfo = res.data
-						console.log(this.userinfo)
+						//console.log(this.userinfo)
 						
 					}
 				})
@@ -95,9 +95,9 @@
 					_id: optoin.id
 				},
 				success: res => {
-					console.log(res)
+					//console.log(res)
 					this.userinfo = res.data
-					console.log(this.userinfo)
+					//console.log(this.userinfo)
 					if (this.userinfo[0].sex == 'undefined') {
 						this.userinfo[0].sex = ''
 					}

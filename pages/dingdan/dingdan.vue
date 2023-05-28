@@ -86,7 +86,7 @@
 					title:'您确认已经收到货吗？',
 					success:(res)=>{
 						if(res.confirm){
-							console.log(e)
+							//console.log(e)
 							uni.request({
 								url: 'http://127.0.0.1:3001/shouhuo',
 								method: 'POST',
@@ -116,7 +116,7 @@
 					title: '确定要取消订单吗',
 					success: (res) => {
 						if (res.confirm) {
-							console.log(e)
+							//console.log(e)
 							uni.request({
 								url: 'http://127.0.0.1:3001/deteledingdan',
 								method: 'POST',
@@ -130,7 +130,7 @@
 								})
 							}, 100)
 						} else {
-							// console.log('cancel') //点击取消之后执行的代码
+							// //console.log('cancel') //点击取消之后执行的代码
 						}
 					}
 				})
@@ -147,7 +147,7 @@
 			},
 			ontabtap(index) {
 				this.status = index
-				console.log(index)
+				//console.log(index)
 				this.getdingdan()
 			},
 			async getdingdan() {
@@ -168,7 +168,7 @@
 						}
 						for (var j in this.dingdan) {
 							for (var k in this.dingdan[j].shopcart) {
-								// console.log(this.dingdan[j].shopcart[k])
+								// //console.log(this.dingdan[j].shopcart[k])
 								if (this.dingdan[j].shopcart[k].shopname.length > 9) {
 									this.dingdan[j].shopcart[k].shopname = this.dingdan[j].shopcart[k]
 										.shopname
@@ -179,7 +179,7 @@
 									.shopcart[k].count
 							}
 						}
-						console.log(this.dingdan)
+						//console.log(this.dingdan)
 					}
 				})
 			}

@@ -55,7 +55,6 @@ const _sfc_main = {
           },
           success: (res) => {
             this.userinfo = res.data;
-            console.log(this.userinfo[0].nickname);
           }
         });
       }
@@ -94,14 +93,12 @@ const _sfc_main = {
       this.createtime = this.formatDateTime(createtime);
       this.$refs[ref].validate().then((res) => {
         this.formData = res;
-        console.log(res);
         for (let i in this.formData.imgs) {
           common_vendor.Es.uploadFile({
             filePath: this.formData.imgs[i].path,
             cloudPath: "pic" + Math.floor(Math.random() * 1e3) + "." + this.formData.imgs[i].extname,
             success: (res2) => {
               this.formData.imgs[i].fileID = res2.fileID;
-              console.log(this.formData.imgs);
             }
           });
         }
@@ -112,7 +109,6 @@ const _sfc_main = {
           this.addtopic();
         }, 3e3 * this.formData.imgs.length);
       }).catch((err) => {
-        console.log(err);
       });
     },
     async addtopic() {

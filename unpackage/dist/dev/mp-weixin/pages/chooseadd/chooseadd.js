@@ -11,7 +11,6 @@ const _sfc_main = {
   },
   methods: {
     topay(res) {
-      console.log(res);
       common_vendor.index.navigateTo({
         url: "/pages/dingdandetail/dingdandetail?id=" + res + "&_id=" + this._id + "&dingdanid=" + this.dingdanid
       });
@@ -40,12 +39,10 @@ const _sfc_main = {
         }
       });
       this.data = res.data;
-      console.log(this.data);
     }
   },
   onLoad(e) {
     this._id = e._id;
-    console.log(this._id);
     this.dingdanid = e.dingdanid;
     this.requestaddress();
     this.status = e.status;

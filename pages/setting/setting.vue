@@ -57,7 +57,7 @@
 		},
 		methods: {
 			tosetaddress(res){
-				console.log(res)
+				//console.log(res)
 				uni.navigateTo({
 					url:'/pages/addressdetail/addressdetail?_id='+res
 				})
@@ -72,13 +72,13 @@
 					key: 'uni-id-pages-userInfo'
 				})
 				this.userinfo =[]
-				console.log(this.userinfo)
+				//console.log(this.userinfo)
 				uni.navigateBack({
 					delta: 1
 				})
 			},
 			togrxx(){
-				// console.log(this.userinfo[0]._id)
+				// //console.log(this.userinfo[0]._id)
 				uni.navigateTo({
 					url:'/pages/grxx/grxx?id='+this.userinfo[0]._id
 				})
@@ -98,9 +98,9 @@
 						_id: this.userinfo._id
 					},
 					success: res => {
-						console.log(res)
+						//console.log(res)
 						this.userinfo = res.data
-						console.log(this.userinfo)
+						//console.log(this.userinfo)
 					}
 				})
 			}

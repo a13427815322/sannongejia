@@ -126,14 +126,14 @@
 						success: res => {
 							//console.log(res)
 							this.userinfo = res.data
-							console.log(this.userinfo[0].nickname)
+							//console.log(this.userinfo[0].nickname)
 						}
 					})
 				}
 
 			},
 			dianzan(res) {
-				console.log(res)
+				//console.log(res)
 				this.id = res
 				this.updatelike()
 			},
@@ -148,7 +148,7 @@
 						this.requestNewsDetail()
 					}
 				})
-				// console.log(res)
+				// //console.log(res)
 				// this.requesttopic()
 			},
 			pl(e) {
@@ -156,7 +156,7 @@
 				this.comimg = this.userinfo[0].headSculpture
 				this.comtime = new Date
 				this.com = e.detail.value
-				console.log(this.com)
+				//console.log(this.com)
 			},
 			sure() {
 				if(this.com.length!=0){
@@ -180,8 +180,8 @@
 				
 			},
 			async update() {
-				console.log(this.temp)
-				console.log(this.data[0].comdata)
+				//console.log(this.temp)
+				//console.log(this.data[0].comdata)
 				
 				{
 					const res = await uni.request({
@@ -231,10 +231,10 @@
 					}
 					this.likestatus = item.likestatus;
 				})
-				// console.log(res.data)
+				// //console.log(res.data)
 				res.data[0].creattime = new Date(res.data[0].creattime).toLocaleDateString()
 				this.data = res.data;
-				console.log(this.likestatus)
+				//console.log(this.likestatus)
 				for( var i in res.data[0].comdata){
 					this.temp[i] = res.data[0].comdata[i];
 				}
@@ -242,11 +242,11 @@
 				if (this.temp == null) {
 					this.temp = []
 				}
-				console.log(this.temp)
+				//console.log(this.temp)
 			},
 			load(e) {
 				this.id = e
-				console.log(this.id)
+				//console.log(this.id)
 				this.requestNewsDetail()
 			},
 			back() {
@@ -256,7 +256,7 @@
 			}
 		},
 		onLoad(options) {
-			console.log(options);
+			//console.log(options);
 			this.id = options.id;
 			this.load(options.id)
 			this.getuserinfo()

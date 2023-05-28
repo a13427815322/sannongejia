@@ -32,12 +32,10 @@ const _sfc_main = {
         }
       });
       this.data = res.data;
-      console.log(this.data);
     }
   },
   onLoad(e) {
     this._id = e._id;
-    console.log(this._id);
     this.requestaddress();
   },
   onShow() {

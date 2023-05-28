@@ -45,9 +45,9 @@
 						username:this.userinfo[0].username
 					},
 					success: res => {
-						console.log(res)
+						//console.log(res)
 						this.userinfo = res.data
-						console.log(this.userinfo)
+						//console.log(this.userinfo)
 						
 						
 						
@@ -78,12 +78,12 @@
 				_id: optoin.id
 			},
 			success: res => {
-				console.log(res)
+				//console.log(res)
 				this.userinfo = res.data
 				if(this.userinfo[0].username=="undefined"){
 					this.userinfo[0].username=null
 				}
-				console.log(this.userinfo)
+				//console.log(this.userinfo)
 			}
 		})
 		}

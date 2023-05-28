@@ -28,9 +28,7 @@ const _sfc_main = {
           phone: this.userinfo[0].phone
         },
         success: (res) => {
-          console.log(res);
           this.userinfo = res.data;
-          console.log(this.userinfo);
         }
       });
       setTimeout(() => {
@@ -54,12 +52,10 @@ const _sfc_main = {
         _id: optoin.id
       },
       success: (res) => {
-        console.log(res);
         this.userinfo = res.data;
         if (this.userinfo[0].phone == "undefined") {
           this.userinfo[0].phone = null;
         }
-        console.log(this.userinfo);
       }
     });
   }

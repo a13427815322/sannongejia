@@ -57,10 +57,10 @@
 						
 						// res.data.datetime.substring(0,5)
 						this.shop = res.data
-						console.log(this.shop)
+						//console.log(this.shop)
 						if (this.shop[0].pingjia != null) {
 							this.pingjia = JSON.parse(this.shop[0].pingjia)
-							console.log(this.pingjia)
+							//console.log(this.pingjia)
 						} else {
 							this.pingjia = []
 						}
@@ -79,7 +79,7 @@
 					this.formData = res
 				})
 				var creattime=new Date
-				// console.log(this.formData.content)
+				// //console.log(this.formData.content)
 				this.pingjia.push({
 					_id:this.userinfo[0]._id,
 					headSculpture:this.userinfo[0].headSculpture,
@@ -87,7 +87,7 @@
 					comment:this.formData.content,
 					creattime:creattime
 				})
-				// console.log(this.pingjia)
+				// //console.log(this.pingjia)
 			uni.request({
 				url: 'http://127.0.0.1:3001/pingjia',
 				method: 'POST',
@@ -113,13 +113,13 @@
 					success: res => {
 						this.dingdanbox = res.data[0]
 						this.dingdan = JSON.parse(res.data[0].shopcart)
-						console.log(this.dingdanbox)
+						//console.log(this.dingdanbox)
 						this.getuserinfo()
 					}
 				})
 			},
 			getuserinfo() {
-				//console.log(this.userinfo)
+				////console.log(this.userinfo)
 				uni.request({
 					url: 'http://127.0.0.1:3001/userinfo',
 					method: 'POST',
@@ -131,16 +131,16 @@
 						phone: this.userinfo.mobile
 					},
 					success: res => {
-						//console.log(res)
+						////console.log(res)
 						this.userinfo = res.data
-						console.log(this.userinfo)
+						//console.log(this.userinfo)
 					}
 				})
 			},
 		},
 		onLoad(option) {
-			console.log(option)
-			console.log(option.dingdanid)
+			//console.log(option)
+			//console.log(option.dingdanid)
 			this.shopid = option.shopid
 			this.dingdanid = option.dingdanid
 			this.getshop()

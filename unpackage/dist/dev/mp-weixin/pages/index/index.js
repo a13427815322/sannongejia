@@ -21,10 +21,7 @@ const _sfc_main = {
   },
   onLoad() {
     this.requestindex();
-    const value = common_vendor.index.getStorageSync("uni-id-pages-userInfo");
-    if (value) {
-      console.log(value);
-    }
+    common_vendor.index.getStorageSync("uni-id-pages-userInfo");
   },
   methods: {
     toNewsdetail(id) {
@@ -44,7 +41,6 @@ const _sfc_main = {
           type: this.active
         },
         success: (res) => {
-          console.log(res);
           for (let index in res.data) {
             res.data[index].datetime = new Date(res.data[index].datetime).toLocaleDateString();
             if (res.data[index].title.length >= 25) {

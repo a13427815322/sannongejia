@@ -106,7 +106,7 @@
 						success: res => {
 							//console.log(res)
 							this.userinfo = res.data
-							console.log(this.userinfo[0].nickname)
+							//console.log(this.userinfo[0].nickname)
 						}
 					})
 				}
@@ -140,13 +140,13 @@
 			submitFrom(ref) {
 				const createtime = new Date()
 				this.createtime = this.formatDateTime(createtime)
-				// console.log(this.createtime)
+				// //console.log(this.createtime)
 				this.$refs[ref].validate().then(res => {
 					this.formData = res
-					console.log(res)
+					//console.log(res)
 
 					setTimeout(() => {
-						// console.log(this.formDatavideo.length)
+						// //console.log(this.formDatavideo.length)
 
 						this.addtopic()
 					})
@@ -154,7 +154,7 @@
 						delta: 1
 					})
 				}).catch(err => {
-					console.log(err)
+					//console.log(err)
 				})
 			},
 			async addtopic() {

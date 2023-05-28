@@ -27,12 +27,10 @@ const _sfc_main = {
         }
       });
       this.data = res.data[0];
-      console.log(this.data);
     },
     submitFrom(ref) {
       this.$refs[ref].validate().then((res) => {
         this.addressdata = res;
-        console.log(this.addressdata);
         if (this.addressdata.sjr == "") {
           this.addressdata.sjr = this.data.sjr;
         }
@@ -51,7 +49,6 @@ const _sfc_main = {
           common_vendor.index.navigateBack({ delta: 1 });
         }, 1e3);
       }).catch((err) => {
-        console.log(err);
       });
     },
     async updateaddress() {
@@ -69,7 +66,6 @@ const _sfc_main = {
   },
   onLoad(e) {
     this.id = e.id;
-    console.log(this.id);
     this.requestaddress();
   }
 };

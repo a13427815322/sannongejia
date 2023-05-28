@@ -17,7 +17,6 @@ const _sfc_main = {
   },
   methods: {
     getdingdang() {
-      console.log(this.userinfo._id);
       common_vendor.index.request({
         url: "http://127.0.0.1:3001/getdingdan",
         method: "POST",
@@ -27,7 +26,6 @@ const _sfc_main = {
         },
         success: (res) => {
           this.dingdan = res.data;
-          console.log(this.dingdan);
           this.dfk = 0;
           this.dfh = 0;
           this.dsh = 0;

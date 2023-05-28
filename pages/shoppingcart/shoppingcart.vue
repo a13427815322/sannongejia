@@ -104,7 +104,7 @@
 					this.userinfo = value
 					this.userinfo._id = String(this.userinfo._id)
 					this.userinfolen = Object.keys(this.userinfo).length
-					//console.log(this.userinfo)
+					////console.log(this.userinfo)
 					uni.request({
 						url: 'http://127.0.0.1:3001/userinfo',
 						method: 'POST',
@@ -116,9 +116,9 @@
 							phone: this.userinfo.mobile
 						},
 						success: res => {
-							//console.log(res)
+							////console.log(res)
 							this.userinfo = res.data
-							console.log(this.userinfo)
+							//console.log(this.userinfo)
 						}
 					})
 				}
@@ -136,12 +136,12 @@
 						this.idbox[i] = this.shopcart[i].shopid
 						this.zhonghe += this.shopcart[i].count * this.shopcart[i].jiage
 					}
-					//console.log(this.shopcart)
-					// //console.log(this.quanxuanbolen)
+					////console.log(this.shopcart)
+					// ////console.log(this.quanxuanbolen)
 				} else {
 					this.quanxuanbolen = false
 					this.zhonghe = 0
-					//console.log(this.quanxuanbolen)
+					////console.log(this.quanxuanbolen)
 					for (var i in this.shopcart) {
 						this.shopcart[i].check = false
 						this.idbox = []
@@ -164,10 +164,10 @@
 					var a = 0
 					for (var i in this.idbox) {
 						if (this.idbox[i] == id) {
-							//console.log(i)
+							////console.log(i)
 							this.idbox.splice(i, 1)
 							a = 1
-							//console.log(this.idbox)
+							////console.log(this.idbox)
 							for (var i in this.shopcart) {
 								if (this.shopcart[i].shopid == id) {
 									this.zhonghe -= this.shopcart[i].count * this.shopcart[i].jiage
@@ -195,7 +195,7 @@
 						if (this.idbox.length == this.shopcart.length) {
 							this.quanxuanbolen = true
 						}
-						//console.log(this.quanxuanbolen)
+						////console.log(this.quanxuanbolen)
 					}
 				}
 			},
@@ -221,7 +221,7 @@
 						this.shopcartbox[k].pinglunzhuantai=0
 						delete this.shopcartbox[k].check
 					}
-					//console.log(this.shopcartbox)
+					////console.log(this.shopcartbox)
 					uni.request({
 						url: 'http://127.0.0.1:3001/todingdan',
 						method: 'POST',
@@ -230,7 +230,7 @@
 							shopcart: this.shopcartbox
 						},
 						success: res => {
-							//console.log(res.data.insertId)
+							////console.log(res.data.insertId)
 							uni.navigateTo({
 								url: '/pages/dingdandetail/dingdandetail?dingdanid=' + res.data.insertId +'&id=0'
 							})
@@ -253,7 +253,7 @@
 					for (var l in this.shopcart) {
 						this.shopcartbox1.push(this.shopcart[l])
 					}
-					//console.log(this.shopcartbox1)
+					////console.log(this.shopcartbox1)
 					for (var i in this.shopcartbox1) {
 						for (var j in this.idbox) {
 							if (this.idbox[j] == this.shopcartbox1[i].shopid) {
@@ -265,7 +265,7 @@
 					for (var k in this.shopcartbox1) {
 						delete this.shopcartbox1[k].check
 					}
-					//console.log(this.shopcartbox1)
+					////console.log(this.shopcartbox1)
 
 					uni.request({
 						url: 'http://127.0.0.1:3001/deleteshopcard',
@@ -279,7 +279,7 @@
 							for (var i in this.shopcart) {
 								this.shopcart[i].check = false
 							}
-							//console.log(this.shopcart)
+							////console.log(this.shopcart)
 							this.idbox = []
 							if (this.shopcart.length == 0) {
 								this.quanxuanbolen = false
@@ -304,7 +304,7 @@
 						for (var i in this.shopcart) {
 							this.shopcart[i].check = false
 						}
-						//console.log(this.shopcart)
+						////console.log(this.shopcart)
 					}
 
 				})
@@ -318,9 +318,9 @@
 			this.requestshopcart()
 			uni.getSystemInfo({
 				success: res => {
-					console.log(res.windowWidth)
+					//console.log(res.windowWidth)
 					if (res.windowWidth < 720) {
-						this.orderwidth = res.windowWidth * 0.9 - 185 //console.log(this.orderwidth)
+						this.orderwidth = res.windowWidth * 0.9 - 185 ////console.log(this.orderwidth)
 					} else {
 						this.orderwidth = 720 * 0.9 - 185
 					}
@@ -336,10 +336,10 @@
 
 			this.windowResizeCallback = (res) => {
 
-				// //console.log('onWindowResize', res.size.windowWidth);
+				// ////console.log('onWindowResize', res.size.windowWidth);
 				if (res.size.windowWidth < 720) {
 					this.orderwidth = res.size.windowWidth * 0.9 - 185
-					//console.log(this.orderwidth)
+					////console.log(this.orderwidth)
 				} else {
 					this.orderwidth = 720 * 0.9 - 185
 				}

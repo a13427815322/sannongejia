@@ -81,12 +81,12 @@
 					},
 				})
 				this.data = res.data
-				console.log(this.data)
+				//console.log(this.data)
 			},
 			submitFrom(ref) {
 				this.$refs[ref].validate().then(res => {
 					this.addressdata = res
-					console.log(this.addressdata)
+					//console.log(this.addressdata)
 					uni.showToast({
 						title: "添加中~",
 						icon: 'loading'
@@ -98,7 +98,7 @@
 						})
 					}, 1000)
 				}).catch(err => {
-					console.log(err)
+					//console.log(err)
 				})
 			},
 			async addaddress() {
@@ -116,7 +116,7 @@
 		},
 		onLoad(e) {
 			this._id = e._id
-			console.log(this._id)
+			//console.log(this._id)
 			this.requestaddress()
 		}
 	}

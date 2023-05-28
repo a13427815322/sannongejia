@@ -55,7 +55,7 @@
 					title: '确定要注销账号吗',
 					success: (res) => {
 						if (res.confirm) {
-							console.log(this._id)
+							//console.log(this._id)
 							uni.request({
 								url: 'http://127.0.0.1:3001/deteleuserifo',
 								method: 'POST',
@@ -63,12 +63,12 @@
 									_id:this._id
 								},
 								success:res => {
-									console.log(res)
+									//console.log(res)
 									uni.removeStorage({
 										key: 'uni-id-pages-userInfo'
 									})
 									this.userinfo =[]
-									console.log(uni.getStorageSync('uni-id-pages-userInfo'))
+									//console.log(uni.getStorageSync('uni-id-pages-userInfo'))
 								}
 							})
 							
@@ -78,7 +78,7 @@
 								})
 							}, 500)
 						} else {
-							// console.log('cancel') //点击取消之后执行的代码
+							// //console.log('cancel') //点击取消之后执行的代码
 						}
 					}
 				})
@@ -100,7 +100,7 @@
 			}
 		},
 		onLoad(options) {
-			console.log(options.id)
+			//console.log(options.id)
 			this._id=options.id
 		},
 		created() {

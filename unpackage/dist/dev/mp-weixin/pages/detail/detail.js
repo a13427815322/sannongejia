@@ -45,13 +45,11 @@ const _sfc_main = {
           },
           success: (res) => {
             this.userinfo = res.data;
-            console.log(this.userinfo[0].nickname);
           }
         });
       }
     },
     dianzan(res) {
-      console.log(res);
       this.id = res;
       this.updatelike();
     },
@@ -72,7 +70,6 @@ const _sfc_main = {
       this.comimg = this.userinfo[0].headSculpture;
       this.comtime = new Date();
       this.com = e.detail.value;
-      console.log(this.com);
     },
     sure() {
       if (this.com.length != 0) {
@@ -93,8 +90,6 @@ const _sfc_main = {
       }
     },
     async update() {
-      console.log(this.temp);
-      console.log(this.data[0].comdata);
       {
         await common_vendor.index.request({
           url: "http://127.0.0.1:3001/update",
@@ -144,18 +139,15 @@ const _sfc_main = {
       });
       res.data[0].creattime = new Date(res.data[0].creattime).toLocaleDateString();
       this.data = res.data;
-      console.log(this.likestatus);
       for (var i in res.data[0].comdata) {
         this.temp[i] = res.data[0].comdata[i];
       }
       if (this.temp == null) {
         this.temp = [];
       }
-      console.log(this.temp);
     },
     load(e) {
       this.id = e;
-      console.log(this.id);
       this.requestNewsDetail();
     },
     back() {
@@ -165,7 +157,6 @@ const _sfc_main = {
     }
   },
   onLoad(options) {
-    console.log(options);
     this.id = options.id;
     this.load(options.id);
     this.getuserinfo();

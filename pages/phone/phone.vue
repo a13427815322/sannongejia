@@ -45,9 +45,9 @@
 						phone:this.userinfo[0].phone
 					},
 					success: res => {
-						console.log(res)
+						//console.log(res)
 						this.userinfo = res.data
-						console.log(this.userinfo)
+						//console.log(this.userinfo)
 						
 					}
 				})
@@ -76,12 +76,12 @@
 				_id: optoin.id
 			},
 			success: res => {
-				console.log(res)
+				//console.log(res)
 				this.userinfo = res.data
 				if(this.userinfo[0].phone=="undefined"){
 					this.userinfo[0].phone=null
 				}
-				console.log(this.userinfo)
+				//console.log(this.userinfo)
 			}
 		})
 		}

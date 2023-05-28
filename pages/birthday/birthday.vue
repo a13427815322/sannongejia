@@ -50,9 +50,9 @@
 						birthday: this.userinfo[0].birthday
 					},
 					success: res => {
-						console.log(res)
+						//console.log(res)
 						this.userinfo = res.data
-						console.log(this.userinfo)
+						//console.log(this.userinfo)
 
 					}
 				}) 
@@ -82,16 +82,16 @@
 					_id: optoin.id
 				},
 				success: res => {
-					console.log(res)
+					//console.log(res)
 					this.userinfo = res.data
-					console.log(this.userinfo)
+					//console.log(this.userinfo)
 
 					this.userinfo[0].birthday = new Date(this.userinfo[0].birthday).toLocaleDateString()
 						.replaceAll('/', '-')
 
 					if (this.userinfo[0].birthday == null) {
 						this.userinfo[0].birthday = '请选择你的生日'
-						console.log(this.userinfo[0].birthday)
+						//console.log(this.userinfo[0].birthday)
 					}
 				}
 			})

@@ -43,7 +43,6 @@ const _sfc_main = {
           },
           success: (res) => {
             this.userinfo = res.data;
-            console.log(this.userinfo);
           }
         });
       }
@@ -224,7 +223,6 @@ const _sfc_main = {
     this.requestshopcart();
     common_vendor.index.getSystemInfo({
       success: (res) => {
-        console.log(res.windowWidth);
         if (res.windowWidth < 720) {
           this.orderwidth = res.windowWidth * 0.9 - 185;
         } else {

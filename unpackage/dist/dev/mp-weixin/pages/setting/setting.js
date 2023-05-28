@@ -12,7 +12,6 @@ const _sfc_main = {
   },
   methods: {
     tosetaddress(res) {
-      console.log(res);
       common_vendor.index.navigateTo({
         url: "/pages/addressdetail/addressdetail?_id=" + res
       });
@@ -27,7 +26,6 @@ const _sfc_main = {
         key: "uni-id-pages-userInfo"
       });
       this.userinfo = [];
-      console.log(this.userinfo);
       common_vendor.index.navigateBack({
         delta: 1
       });
@@ -52,9 +50,7 @@ const _sfc_main = {
           _id: this.userinfo._id
         },
         success: (res) => {
-          console.log(res);
           this.userinfo = res.data;
-          console.log(this.userinfo);
         }
       });
     }

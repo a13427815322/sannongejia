@@ -68,21 +68,21 @@
 				res.data.forEach(item => {
 					item.content = JSON.parse(item.content)
 				
-					console.log(item.content)
+					//console.log(item.content)
 				})
-				// console.log(res.data)
+				// //console.log(res.data)
 				res.data[0].datetime = new Date(res.data[0].datetime).toLocaleDateString()
 				this.data = res.data[0];
-				// console.log(this.data)
+				// //console.log(this.data)
 			}
 		},
 		onLoad(e) {
-			// console.log(e.id)
+			// //console.log(e.id)
 			this.id = e.id
 			this.requestnews()
 		},
 		onPageScroll(e) {
-			// console.log('e:', e)
+			// //console.log('e:', e)
 			if (e.scrollTop >= 400) {
 				// 显示
 				this.isShow = true

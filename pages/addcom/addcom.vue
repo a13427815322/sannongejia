@@ -109,7 +109,7 @@
 						success: res => {
 							//console.log(res)
 							this.userinfo = res.data
-							console.log(this.userinfo[0].nickname)
+							//console.log(this.userinfo[0].nickname)
 						}
 					})
 				}
@@ -147,25 +147,25 @@
 				})
 				const createtime = new Date()
 				this.createtime = this.formatDateTime(createtime)
-				// console.log(this.createtime)
+				// //console.log(this.createtime)
 				this.$refs[ref].validate().then(res => {
 					this.formData = res
-					console.log(res)
+					//console.log(res)
 					for (let i in this.formData.imgs) {
-						// console.log(this.formData.imgs[i].path)
+						// //console.log(this.formData.imgs[i].path)
 						uniCloud.uploadFile({
 							filePath: this.formData.imgs[i].path,
 							cloudPath: 'pic' + Math.floor(Math.random() * 1000) + '.' + this.formData.imgs[
 								i].extname,
 							success: res => {
-								// console.log(res)
+								// //console.log(res)
 								this.formData.imgs[i].fileID = res.fileID
-								console.log(this.formData.imgs)
+								//console.log(this.formData.imgs)
 							}
 						})
 					}
 					setTimeout(() => {
-						// console.log(this.formData.imgs.length)
+						// //console.log(this.formData.imgs.length)
 						uni.navigateBack({
 							delta: 1
 						})
@@ -173,7 +173,7 @@
 					},3000* this.formData.imgs.length)
 
 				}).catch(err => {
-					console.log(err)
+					//console.log(err)
 				})
 			},
 			async addtopic() {

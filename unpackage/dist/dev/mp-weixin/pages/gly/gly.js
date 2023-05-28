@@ -49,7 +49,6 @@ const _sfc_main = {
               this.dingdan[j].zongji += this.dingdan[j].shopcart[k].jiage * this.dingdan[j].shopcart[k].count;
             }
           }
-          console.log(this.dingdan);
         }
       });
     }

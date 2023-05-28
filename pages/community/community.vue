@@ -116,7 +116,7 @@
 						success: res => {
 							//console.log(res)
 							this.userinfo = res.data
-							// console.log(this.userinfo)
+							// //console.log(this.userinfo)
 						}
 					})
 				}
@@ -127,11 +127,11 @@
 					url: 'http://127.0.0.1:3001/community',
 					method: "POST",
 					success: res => {
-						// console.log(res)
+						// //console.log(res)
 						for (let index in res.data) {
 							res.data[index].creattime = new Date(res.data[index].creattime)
 								.toLocaleDateString();
-							// console.log(res.data[index].content.length)
+							// //console.log(res.data[index].content.length)
 							// if(res.data[index].content.length>=30){
 							// 	res.data[index].content=res.data[index].content.substring(0,30)+"..."
 							// }
@@ -145,9 +145,9 @@
 								item.comdata = []
 							}
 
-							// console.log(item.imgurls)
+							// //console.log(item.imgurls)
 						})
-						// console.log(res)
+						// //console.log(res)
 						this.community = res.data
 
 					}
@@ -157,7 +157,7 @@
 				uni.showActionSheet({
 					itemList: ['上传图片', '上传视频'],
 					success(res) {
-						console.log(res.tapIndex) //下标0开始
+						//console.log(res.tapIndex) //下标0开始
 						if (res.tapIndex == 0) {
 							uni.navigateTo({
 								url: '/pages/addcom/addcom'
@@ -170,19 +170,19 @@
 
 					},
 					fail(res) {
-						console.log(res.errMsg)
+						//console.log(res.errMsg)
 					}
 				})
 
 			},
 			todetail(res) {
-				// console.log(res)
+				// //console.log(res)
 				uni.navigateTo({
 					url: '../detail/detail?id=' + res
 				})
 			},
 			dianzan(res) {
-				console.log(res)
+				//console.log(res)
 				this.id = res
 				this.updatelike()
 			},
@@ -197,7 +197,7 @@
 						this.requesttopic()
 					}
 				})
-				// console.log(res)
+				// //console.log(res)
 				// this.requesttopic()
 			}
 		},

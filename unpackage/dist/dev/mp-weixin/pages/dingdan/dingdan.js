@@ -37,7 +37,6 @@ const _sfc_main = {
         title: "您确认已经收到货吗？",
         success: (res) => {
           if (res.confirm) {
-            console.log(e);
             common_vendor.index.request({
               url: "http://127.0.0.1:3001/shouhuo",
               method: "POST",
@@ -63,7 +62,6 @@ const _sfc_main = {
         title: "确定要取消订单吗",
         success: (res) => {
           if (res.confirm) {
-            console.log(e);
             common_vendor.index.request({
               url: "http://127.0.0.1:3001/deteledingdan",
               method: "POST",
@@ -92,7 +90,6 @@ const _sfc_main = {
     },
     ontabtap(index) {
       this.status = index;
-      console.log(index);
       this.getdingdan();
     },
     async getdingdan() {
@@ -117,7 +114,6 @@ const _sfc_main = {
               this.dingdan[j].zongji += this.dingdan[j].shopcart[k].jiage * this.dingdan[j].shopcart[k].count;
             }
           }
-          console.log(this.dingdan);
         }
       });
     }

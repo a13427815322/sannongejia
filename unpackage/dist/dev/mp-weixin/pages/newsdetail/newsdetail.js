@@ -32,7 +32,6 @@ const _sfc_main = {
       });
       res.data.forEach((item) => {
         item.content = JSON.parse(item.content);
-        console.log(item.content);
       });
       res.data[0].datetime = new Date(res.data[0].datetime).toLocaleDateString();
       this.data = res.data[0];

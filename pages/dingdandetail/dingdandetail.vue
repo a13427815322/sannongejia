@@ -398,7 +398,7 @@
 					title: '确定要取消订单吗',
 					success: (res) => {
 						if (res.confirm) {
-							console.log(e)
+							//console.log(e)
 							uni.request({
 								url: 'http://127.0.0.1:3001/deteledingdan',
 								method: 'POST',
@@ -412,7 +412,7 @@
 								})
 							}, 100)
 						} else {
-							// console.log('cancel') //点击取消之后执行的代码
+							// //console.log('cancel') //点击取消之后执行的代码
 						}
 					}
 				})
@@ -427,7 +427,7 @@
 					title: '您确认已经收到货吗？',
 					success: (res) => {
 						if (res.confirm) {
-							console.log(e)
+							//console.log(e)
 							uni.request({
 								url: 'http://127.0.0.1:3001/shouhuo',
 								method: 'POST',
@@ -505,10 +505,10 @@
 				})
 				for (var i in res.data[0].shopcart) {
 					this.total += (res.data[0].shopcart[i].count * res.data[0].shopcart[i].jiage)
-					// console.log(this.total)
+					// //console.log(this.total)
 				}
 				this.data = res.data[0]
-				console.log(this.data)
+				//console.log(this.data)
 			},
 			async requestaddress() {
 				const res = await uni.request({
@@ -519,12 +519,12 @@
 					},
 				})
 				this.adddata = res.data
-				console.log(this.adddata)
+				//console.log(this.adddata)
 			}
 		},
 		onLoad(e) {
-			console.log(e)
-			console.log(e.dingdanid)
+			//console.log(e)
+			//console.log(e.dingdanid)
 			this.dingdanid = e.dingdanid
 			this.id = e.id
 			this.requestdingdan()
