@@ -71,7 +71,8 @@
 
 			}
 		},
-		methods: {add(e,id){
+		methods: {
+			add(e,id){
 				this.$refs.inCart.addToCart(e,id);
 				console.log(id)
 				uni.showToast({

@@ -41,7 +41,7 @@
 			<image src="../../static/collect.png"></image><span>收藏</span>
 		</view>
 		<view class="gmbox">
-			<view class="jrgwc">加入购物车</view>
+			<view class="jrgwc" @click="add()">加入购物车</view>
 			<view class="ljgm" @click="topay">立即购买</view>
 		</view>
 	</view>
@@ -60,6 +60,24 @@
 			}
 		},
 		methods: {
+			add(){
+				uni.showToast({
+					title:'添加购物车成功',
+					icon:'true'
+				})
+				uni.request({
+					url: 'http://127.0.0.1:3001/toshopcart',
+					method: 'POST',
+					data: {
+						id:this._id,
+						shopid:this.id
+					},
+					success: res => {
+						
+					}
+				})
+				
+			},
 			topay(){
 				uni.request({
 					url:'http://127.0.0.1:3001/payone',
